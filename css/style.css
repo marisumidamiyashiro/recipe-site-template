@@ -1171,6 +1171,27 @@ h3 {
     padding: 0.5em;
     margin: 0;
   }
+  .recipe-chosen-main .recipe-chosen-ingredients-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .recipe-chosen-main .recipe-chosen-ingredients-list .recipe-chosen-singles-list {
+    margin: 0;
+  }
+  .recipe-chosen-main .recipe-chosen-ingredients-list .recipe-chosen-singles-list .swiper {
+    min-width: 75vw;
+  }
+  .recipe-chosen-main .recipe-chosen-ingredients-list .recipe-chosen-singles-list .swiper span {
+    color: #333 !important;
+    text-transform: capitalize !important;
+    letter-spacing: normal !important;
+  }
+  .recipe-chosen-main .recipe-chosen-ingredients-list .recipe-chosen-all-ingredients-list {
+    margin: 2em 0;
+    width: 75vw;
+  }
 }
 body {
   margin: 0;
