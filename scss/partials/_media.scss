@@ -141,6 +141,17 @@
                     h1 {
                         color: #333;
                     }
+
+                    a {
+                        .icon {
+                            &.arrow {
+                                &::before {
+                                    border-top-color: $button-color;
+                                    border-right-color: $button-color;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -203,5 +214,82 @@
 
     // RECIPE TEMPLATE
 
+    .recipe-template-main {
+        margin: 0;
 
+        .hero {
+            margin: 10em 0 0 0;
+
+            .recipe-title {
+                margin: 1em;
+
+                h1 {
+                    margin: 1em 0;
+                }
+            }
+
+            .recipe-details {
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                }
+            }
+        }
+
+        .recipe-ingredients {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .ingredients-list {
+                margin: 0;
+            }
+
+            .ingredients-image {
+
+                img {
+                    width: 95vw;
+                    height: 100%;
+                    margin: 0;
+                }
+            }
+        }
+
+        .recipe-buttons {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+
+            .button {
+                border: none;
+                font-weight: 700;
+
+                &:hover {
+                    color: $button-color;
+                }
+
+                &:after {
+                    background-color: transparent;
+                    border: none;
+                    animation: none;
+                }
+            }
+        }
+
+        .recipe-directions {
+            .directions-image {
+                position: absolute;
+                opacity: 0;
+            }
+
+            .directions-list {
+                margin-left: 2em;
+
+                ul {
+                    margin: 0 2em;
+                }
+            }
+        }
+    }
 }

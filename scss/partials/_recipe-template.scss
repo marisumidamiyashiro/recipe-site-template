@@ -8,7 +8,7 @@
             margin: 2em;
 
             h1 {
-                font-size: 3em;
+                font-size: clamp(2em, 3vw, 3em);
                 text-align: center;
                 border: 1px solid #333;
                 padding: 1em;
@@ -31,6 +31,13 @@
                     font-size: 1em;
                     padding: 1em;
                     list-style: none;
+
+                    span {
+                        &:nth-child(1) {
+                            color: $button-color;
+                            font-weight: 700;
+                        }
+                    }
                 }
             }
         }
