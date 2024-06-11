@@ -15,48 +15,72 @@
 
     .recipe-chosen-ingredients-list {
         display: flex;
+        margin: 2em;
 
         .recipe-chosen-singles-list {
             // border: 1px solid #333;
-
-            .swiper-slide {
-                background-color: $accent-color;
-            }
+            margin: 1em;
 
             .swiper {
-                width: 30vw;
-                padding: 1em;
-                height: fit-content;
+                max-width: 45vw;
+                border: 1px solid black;
 
-                .swiper-recipe-chosen-ingredients {
-                    h1 {
-                        color: $button-color;
-                    }
+                .swiper-slide {
+                    background-color: $accent-color;
+                    height: auto;
 
-                    ul {
-                        list-style: none;
-                        padding: 0;
+                    .swiper-recipe-chosen-ingredients {
 
-                        li {
-                            font-family: $font-sans-serif;
-                            line-height: 2em;
+                        // border: 1px solid blue;
 
-                            &:nth-child(odd) {
-                                background-color: $list-item-color;
-                            }
+                        h1 {
+                            color: $button-color;
+                            text-align: center;
+                        }
 
-                            span {
-                                &:nth-child(1) {
-                                    text-transform: uppercase;
-                                    letter-spacing: 2px;
-                                    color: $button-color;
-                                    font-weight: 700;
+                        ul {
+                            list-style: none;
+                            padding: 0;
+
+                            li {
+                                display: grid;
+                                align-items: center;
+                                grid-template-areas: "a b c";
+                                grid-template-columns: repeat(3, 33.33% [col-start]);
+                                font-family: $font-sans-serif;
+                                font-size: 75%;
+                                line-height: 4em;
+
+                                &:nth-child(odd) {
+                                    background-color: $list-item-color;
                                 }
 
-                                &:nth-child(2),
-                                &:nth-child(3) {
-                                    font-style: italic;
-                                    padding: 0 .5em;
+                                span {
+
+
+                                    &:nth-child(1) {
+                                        grid-area: a;
+                                        text-transform: uppercase;
+                                        letter-spacing: 2px;
+                                        color: $button-color;
+                                        font-weight: 700;
+                                        margin-left: 1.5em;
+                                        line-height: 1.5em;
+                                    }
+
+                                    &:nth-child(2) {
+                                        grid-area: b;
+                                        color: #333;
+                                        text-align: center;
+                                    }
+
+                                    &:nth-child(3) {
+                                        grid-area: c;
+                                        color: #333;
+                                        font-weight: 700;
+                                        font-style: italic;
+                                        text-transform: uppercase;
+                                    }
                                 }
                             }
                         }
@@ -64,14 +88,99 @@
                 }
             }
 
-            .swiper-button-prev,
-            .swiper-button-next {
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                border: 1px solid red;
-                color: $button-color;
-                --swiper-navigation-size: 30px;
+            .swiper-controls {
+                // border: 1px solid green;
+                // display: flex;
+                // flex-direction: column;
+
+                .swiper-navigation-buttons {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        position: relative;
+                        // border: 1px solid red;
+                        color: $button-color;
+                        margin: 1em;
+                        --swiper-navigation-size: 50px;
+                    }
+                }
+
+                .swiper-pagination {
+
+                    .swiper-pagination-bullet {
+                        background: #333;
+                        padding: .5em;
+                    }
+
+                    .swiper-pagination-bullet-active {
+                        background: $link-color;
+                    }
+                }
+            }
+        }
+
+        .recipe-chosen-all-ingredients-list {
+            border: 1px solid #333;
+            margin: 1em;
+            width: 45vw;
+            height: auto;
+
+            h3 {
+                margin: 0;
+                text-align: center;
+                font-size: 2em;
+            }
+
+            .all-ingredients-list {
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        display: grid;
+                        align-items: center;
+                        grid-template-areas: "a b c";
+                        grid-template-columns: repeat(3, 33.33% [col-start]);
+                        font-family: $font-sans-serif;
+                        font-size: 75%;
+                        line-height: 4em;
+
+                        &:nth-child(odd) {
+                            background-color: $list-item-color;
+                        }
+
+                        span {
+
+
+                            &:nth-child(1) {
+                                grid-area: a;
+                                text-transform: uppercase;
+                                letter-spacing: 2px;
+                                color: $button-color;
+                                font-weight: 700;
+                                margin-left: 1.5em;
+                                line-height: 1.5em;
+                            }
+
+                            &:nth-child(2) {
+                                text-align: center;
+                                grid-area: b;
+                                color: #333;
+                            }
+
+                            &:nth-child(3) {
+                                grid-area: c;
+                                color: #333;
+                                font-weight: 700;
+                                font-style: italic;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

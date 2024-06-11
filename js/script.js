@@ -9,13 +9,7 @@ menubutton.onclick = function () {
     } else {
         mysitenav.setAttribute('data-navstate', 'open');
     }
-}
-
-mylistitems.forEach(item => {
-    item.onclick = function () {
-        mysitenav.setAttribute('data-navstate', 'closed');
-    };
-});
+};
 
 // RECIPE UPLOAD | ADD INGREDIENT FUNCTION
 function addIngredient() {
