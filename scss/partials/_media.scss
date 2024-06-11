@@ -292,4 +292,46 @@
             }
         }
     }
+
+    // UPLOAD A RECIPE
+
+    .recipe-form {
+        max-width: 75vw;
+
+        form {
+
+            input[type="text"],
+            input[type="file"],
+            textarea {
+                max-width: 60vw;
+            }
+
+            .recipe-upload-added-ingredient {
+                display: flex;
+                flex-direction: column;
+
+                .added-ingredient-list {
+
+                    .ingredient-list {
+                        max-width: 50vw;
+                        max-height: 100% !important;
+
+                        li {
+                            line-height: 1em;
+
+                            span {
+                                font-size: 80%;
+                                margin: 0;
+                            }
+
+                            .remove-item {
+                                padding: .5em;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

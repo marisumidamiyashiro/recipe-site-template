@@ -1066,6 +1066,33 @@ h3 {
   .recipe-template-main .recipe-directions .directions-list ul {
     margin: 0 2em;
   }
+  .recipe-form {
+    max-width: 75vw;
+  }
+  .recipe-form form input[type=text],
+  .recipe-form form input[type=file],
+  .recipe-form form textarea {
+    max-width: 60vw;
+  }
+  .recipe-form form .recipe-upload-added-ingredient {
+    display: flex;
+    flex-direction: column;
+  }
+  .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list {
+    max-width: 50vw;
+    max-height: 100% !important;
+  }
+  .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li {
+    line-height: 1em;
+  }
+  .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li span {
+    font-size: 80%;
+    margin: 0;
+  }
+  .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li .remove-item {
+    padding: 0.5em;
+    margin: 0;
+  }
 }
 body {
   margin: 0;
