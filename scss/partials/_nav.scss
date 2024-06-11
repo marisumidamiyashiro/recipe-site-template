@@ -1,0 +1,306 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #fae5d3f8;
+    z-index: 5;
+    // border-bottom: 1px solid #333;
+
+    .site-id {
+        padding: 1em;
+
+        a {
+            border: 1px solid $button-color;
+            color: $button-color;
+            text-decoration: none;
+            padding: 1em;
+            transition: all .5s ease;
+
+            &:hover {
+                color: $accent-color;
+                background-color: $button-color;
+                box-shadow: inset 0 0 0 2px $accent-color;
+            }
+        }
+    }
+
+    .section-line {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        border-top: 1px solid $link-color;
+        width: 50vw;
+    }
+
+    .site-nav {
+
+        button {
+            opacity: 0;
+        }
+
+        ul {
+            // border: 1px solid green;
+            display: flex;
+            list-style: none;
+            // margin-right: 5em;
+
+            li {
+                padding: .5em 1em;
+                margin: 0 1em;
+
+                a {
+                    display: inline-block;
+                    color: $link-color;
+                    padding: 1em;
+                    border-radius: 0;
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        height: 2px;
+                        width: 0;
+                    }
+
+                    &:before {
+                        transition: width 0s ease, background .4s ease;
+                        left: 0;
+                        right: 0;
+                        bottom: 3px;
+                    }
+
+                    &:after {
+                        right: 2.2%;
+                        bottom: 3px;
+                        background: $button-color;
+                        transition: width .4s ease;
+                    }
+
+                    &:hover {
+                        &:before {
+                            width: 97.8%;
+                            background: $button-color;
+                            transition: width .4s ease;
+                        }
+
+                        &:after {
+                            width: 97.8%;
+                            background: 0 0;
+                            transition: all 0s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* TOP RECTANGLE ANIMATION OPEN */
+@keyframes separated-top-one-open {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(18%, -75%) rotate(45deg);
+    }
+}
+
+@keyframes separated-top-two-open {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-18%, -75%) rotate(-45deg);
+    }
+}
+
+/* MIDDLE RECTANGLE ANIMATION OPEN */
+@keyframes separated-middle-one-open {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(-25%, 0);
+        opacity: .7;
+    }
+
+    90% {
+        transform: translate(-50%, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-80%, 0);
+    }
+}
+
+@keyframes separated-middle-two-open {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(25%, 0);
+        opacity: .7;
+    }
+
+    90% {
+        transform: translate(50%, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(80%, 0);
+    }
+}
+
+/* BOTTOM RECTANGLE ANIMATION OPEN */
+@keyframes separated-bottom-one-open {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-34%, -135%) rotate(-45deg);
+    }
+}
+
+@keyframes separated-bottom-two-open {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(34%, -135%) rotate(45deg);
+    }
+}
+
+/* TOP RECTANGLE ANIMATION CLOSE */
+@keyframes separated-top-one-close {
+    0% {
+        transform: translate(18%, -75%) rotate(45deg);
+    }
+
+    33% {
+        transform: translate(18%, -75%) rotate(45deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes separated-top-two-close {
+    0% {
+        transform: translate(-18%, -75%) rotate(-45deg);
+    }
+
+    33% {
+        transform: translate(-18%, -75%) rotate(-45deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* MIDDLE RECTANGLE ANIMATION CLOSE */
+@keyframes separated-middle-one-close {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(0, 0);
+        opacity: .5;
+    }
+
+    70% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes separated-middle-two-close {
+    0% {
+        transform: translate(50%, 0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(0, 0);
+        opacity: .5;
+    }
+
+    70% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+/* BOTTOM RECTANGLE ANIMATION CLOSE */
+@keyframes separated-bottom-one-close {
+    0% {
+        transform: translate(-34%, -135%) rotate(-45deg);
+    }
+
+    25% {
+        transform: translate(-34%, -135%) rotate(-45deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes separated-bottom-two-close {
+    0% {
+        transform: translate(345%, -135%) rotate(45deg);
+    }
+
+    25% {
+        transform: translate(34%, -135%) rotate(45deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}

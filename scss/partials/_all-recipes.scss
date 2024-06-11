@@ -1,0 +1,104 @@
+.all-recipes-main {
+    margin: 0 2em;
+
+    .all-recipes-hero {
+        margin-top: 10em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .all-recipes-title {
+            margin: 0 auto;
+
+            h1 {
+                border: 1px solid $link-color;
+                padding: 1em;
+                font-size: clamp(2em, 3vw, 3em);
+            }
+        }
+    }
+
+    .all-recipes-cards {
+        // border: 1px solid red;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .recipe-card {
+                border: 1px solid $link-color;
+                display: flex;
+                // min-width: 750px;
+                min-height: 300px;
+                margin: 2em;
+
+                .recipe-card-image {
+
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                    }
+                }
+
+                .recipe-card-info {
+                    margin-left: 1em;
+
+                    .recipe-card-title {
+
+                        h1 {
+                            font-size: clamp(1.5em, 2vw, 2em);
+                            margin-bottom: 0;
+                        }
+
+                        span {
+                            font-family: $font-sans-serif;
+                            font-style: italic;
+                            text-transform: uppercase;
+                        }
+
+                    }
+
+                    .recipe-card-copy {
+                        max-width: 400px;
+
+                        p {
+                            color: #333;
+                            font-family: $font-sans-serif;
+                        }
+                    }
+
+                    .recipe-card-details {
+                        display: flex;
+                        margin: 1em 0;
+
+                        ul {
+                            display: flex;
+                            list-style: none;
+                            padding: 0;
+
+                            li {
+                                margin: 0 1em 0 0;
+                                font-family: $font-sans-serif;
+
+                                span {
+                                    &:nth-child(1) {
+                                        color: $link-color;
+                                        text-transform: uppercase;
+                                        font-weight: 700;
+                                    }
+
+                                    &:nth-child(2) {
+                                        color: #333;
+                                        text-transform: capitalize;
+                                        font-style: italic;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// VARIABLES
+$font-serif: platypi, serif;
+$font-sans-serif: public-sans, sans-serif;
+
+$link-color: #d35f00;
+$link-hover-color: #ff985d;
+$button-color: #ff8f45;
+$accent-color: #FAE5D3;
+$list-item-color: #ffffff8a;
+
+
+
+// IMPORTS
+@import "partials/nav.scss";
+@import "partials/typography";
+@import "partials/button";
+@import "partials/home-structure";
+@import "partials/recipe-template";
+@import "partials/all-recipes";
+@import "partials/upload-recipe";
+@import "partials/recipes-chosen";
+@import "partials/media";
+
+// GLOBAL RESET
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $accent-color;
+}

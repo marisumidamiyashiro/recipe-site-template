@@ -1,0 +1,78 @@
+.recipe-chosen-main {
+    margin: 10em 3em;
+
+    .recipe-chosen-title {
+        display: flex;
+        justify-content: center;
+        margin: 5em;
+
+        h1 {
+            border: 1px solid #333;
+            padding: 1em;
+            font-size: clamp(1em, 3vw, 3em);
+        }
+    }
+
+    .recipe-chosen-ingredients-list {
+        display: flex;
+
+        .recipe-chosen-singles-list {
+            // border: 1px solid #333;
+
+            .swiper-slide {
+                background-color: $accent-color;
+            }
+
+            .swiper {
+                width: 30vw;
+                padding: 1em;
+                height: fit-content;
+
+                .swiper-recipe-chosen-ingredients {
+                    h1 {
+                        color: $button-color;
+                    }
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+
+                        li {
+                            font-family: $font-sans-serif;
+                            line-height: 2em;
+
+                            &:nth-child(odd) {
+                                background-color: $list-item-color;
+                            }
+
+                            span {
+                                &:nth-child(1) {
+                                    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    color: $button-color;
+                                    font-weight: 700;
+                                }
+
+                                &:nth-child(2),
+                                &:nth-child(3) {
+                                    font-style: italic;
+                                    padding: 0 .5em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid red;
+                color: $button-color;
+                --swiper-navigation-size: 30px;
+            }
+        }
+    }
+}

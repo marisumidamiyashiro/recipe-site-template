@@ -1,0 +1,108 @@
+.site-main {
+    display: flex;
+
+    .hero {
+        background-image: url('/img/pizza.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+
+            .all-recipes-links {
+                // border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10em;
+                background-color: rgba(255, 161, 124, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 1rem;
+
+                h1 {
+                    color: $accent-color;
+                    margin: 4em 5em 1em 5em;
+                    line-height: 2em;
+                    font-size: 2em;
+                    filter: drop-shadow(0px 0px 3px #333);
+                }
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+                    width: 50px;
+
+                    .icon {
+                        height: 50px;
+                        width: 50px;
+                        animation: moving-arrow 1.5s ease-in-out infinite;
+
+                        &.arrow {
+                            position: relative;
+                            top: 0;
+                            right: 0;
+
+                            &:before {
+                                top: .5rem;
+                                left: .5rem;
+                                width: 1rem;
+                                height: 1rem;
+                                border-top: .5rem solid $button-color;
+                                border-right: .5rem solid $button-color;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .recipe-links {
+        background-color: $accent-color;
+        width: 30vw;
+
+        .container {
+            display: flex;
+            height: 100vh;
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                margin: 3em 0;
+            }
+        }
+    }
+}
+
+// ANIMATIONS
+
+@keyframes moving-arrow {
+    0% {
+        opacity: 0;
+        left: -15%;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
