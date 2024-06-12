@@ -185,7 +185,7 @@
     }
 
     .recipe-card {
-        max-width: 500px;
+        min-width: 300px !important;
 
         .recipe-card-image {
             position: absolute;
