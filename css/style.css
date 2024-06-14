@@ -37,6 +37,7 @@
 .site-header .site-nav ul {
   display: flex;
   list-style: none;
+  margin-right: 5em;
 }
 .site-header .site-nav ul li {
   padding: 0.5em 1em;
@@ -343,6 +344,7 @@ h3 {
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .recipe-template-main .recipe-buttons .button:hover,
 .recipe-template-main .recipe-card-button .button:hover,
@@ -697,6 +699,7 @@ h3 {
   color: #d35f00;
   text-transform: uppercase;
   font-weight: 700;
+  margin-right: 0.5em;
 }
 .all-recipes-main .all-recipes-cards .all-recipes-container .recipe-card .recipe-card-info .recipe-card-details .recipe-card-list li span:nth-child(2) {
   color: #333;
@@ -1071,6 +1074,7 @@ h3 {
   }
   .recipe-card {
     min-width: 300px !important;
+    justify-content: center;
   }
   .recipe-card .recipe-card-image {
     position: absolute;
@@ -1080,14 +1084,16 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 !important;
   }
   .recipe-card .recipe-card-info .recipe-card-title {
     margin: 1em;
   }
-  .recipe-card .recipe-card-info .recipe-card-details ul {
+  .recipe-card .recipe-card-info .recipe-card-details .recipe-card-list {
     display: flex;
     flex-direction: column;
     line-height: 1.5;
+    margin: 0 !important;
   }
   .recipe-template-main {
     margin: 0;

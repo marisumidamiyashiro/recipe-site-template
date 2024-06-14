@@ -53,6 +53,7 @@ window.onload = (event) => {
         newButton.className = ('recipe-card-button');
         title.className = ('recipe-title');
         newLink.className = ('button');
+        newList.className = ('recipe-card-list');
 
         // TEXT
         newHeader.textContent = title;
