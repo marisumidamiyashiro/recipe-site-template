@@ -1,14 +1,14 @@
 // MEDIA QUERIES - MOBILE SCREEN
 
 // SITE-NAV ON HOME PAGE | HIDDEN ON LARGE SCREENS
-@media (min-width: 768px) {
+@media (min-width: 1130px) {
     .main-page {
         position: absolute;
         top: -9999px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1130px) {
 
     // SITE-NAV
 
