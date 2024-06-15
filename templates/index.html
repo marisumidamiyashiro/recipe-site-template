@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
@@ -47,11 +47,11 @@
     </header>
 
     <main class="site-main">
-        <section class="hero" >
+        <section class="hero" style="background-image: url({{ url_for('static', filename='img/pizza.jpg')}});">
             <div class="container">
                 <div class="all-recipes-links">
                     <h1>view<br>all<br>recipes</h1>
-                    <a href="all-recipes.html">
+                    <a href="{{url_for('all_recipes')}}">
                         <span class="icon arrow"></span>
                     </a>
                 </div>
@@ -81,7 +81,7 @@
         <!-- later: login area -->
     </main>
 
-    <script src="js/menu-icon.js"></script>
+    <script src="static/js/menu-icon.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="added files for db and server" />
+    <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="added files for db and server">
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/pizza.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/all-recipes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/menu-icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/recipe-upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/swiper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +47,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python.db_interface.executor": "Run",
     "Python.main.executor": "Run",
     "Python.recipe_db.executor": "Run",
     "Python.server.executor": "Run",
@@ -42,21 +55,47 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/pycharm/projects/temp",
+    "last_opened_file_path": "C:/Users/garre_000/Documents/projects/python/recipe-site-template/static",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\garre_000\Documents\projects\python\recipe-site-template\static" />
+      <recent name="C:\Users\garre_000\Documents\projects\python\recipe-site-template\templates" />
       <recent name="F:\pycharm\projects\temp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\garre_000\Documents\projects\python\recipe-site-template" />
+      <recent name="C:\Users\garre_000\Documents\projects\python\recipe-site-template\static\img" />
       <recent name="F:\pycharm\projects\temp" />
       <recent name="F:\pycharm\projects\temp\db_classes" />
       <recent name="F:\pycharm\projects\temp\db-classes" />
     </key>
   </component>
   <component name="RunManager" selected="Python.server">
+    <configuration name="db_interface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="temp" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="recipe_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="temp" />
       <option name="ENV_FILES" value="" />
@@ -104,6 +143,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.server" />
+        <item itemvalue="Python.db_interface" />
         <item itemvalue="Python.recipe_db" />
       </list>
     </recent_temporary>

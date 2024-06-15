@@ -431,7 +431,7 @@ h3 {
   display: flex;
 }
 .site-main .hero {
-
+  background-image: url("/img/pizza.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
