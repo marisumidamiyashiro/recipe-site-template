@@ -327,7 +327,7 @@ h3 {
 }
 .recipe-links .links a:hover .circle .icon.arrow {
   background: #fff;
-  transform: trnaslate(1rem, 0);
+  transform: translate(1rem, 0);
 }
 .recipe-links .links a:hover .button-text {
   color: #FAE5D3;
@@ -431,7 +431,7 @@ h3 {
   display: flex;
 }
 .site-main .hero {
-
+  background-image: url("/img/pizza.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
