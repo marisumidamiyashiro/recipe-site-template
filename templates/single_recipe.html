@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{recipe.name}}</title>
+</head>
+<body>
+<h1>{{recipe.name}}</h1>
+ <img src="{{recipe.photo_url}}" style="max-width:400px; max-height:600px;">
+<ul>
+    <li>
+        cook time: {{recipe.cook_time}}
+    </li>
+    <li>
+        servings: {{recipe.servings}}
+    </li>
+        <li>
+        calories: {{recipe.calories}}
+    </li>
+</ul>
+<hr/>
+<h2>Ingredients</h2>
+
+<ul>
+    {% for ingredient in recipe.ingredients %}
+    <li>
+        <p>{{ingredient[1]}} {{ingredient[2]}} {{ingredient[0]}}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+<p>
+    {{recipe.instructions}}
+</p>
+
+
+
+
+
+
+</body>
+</html>
