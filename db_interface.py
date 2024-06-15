@@ -60,14 +60,14 @@ def main() -> None:
     #     "sort": 1
     # }
     # update_recipe_ingredient(sample_recipe_ingredient, session=session, engine=engine)
-    # sample_recipe_params = {
-    #     'name': 'Chicken n Cheese',
-    #     'cook_time': '20 minutes',
-    #     'servings': 1,
-    #     'calories': 300,
-    #     'instructions': "cook it\neat it",
-    #     'meal_type': 'Breakfast'
-    # }
+    sample_recipe_params = {
+        'name': 'Chicken n Cheese',
+        'cook_time': '20 minutes',
+        'servings': 1,
+        'calories': 300,
+        'instructions': "cook it\neat it",
+        'meal_type': 'Breakfast'
+    }
     # edit_sample_recipe_params = {
     #     'recipe_id': 2,
     #     'name': 'Chicken n Cheese',
@@ -77,25 +77,25 @@ def main() -> None:
     #     'instructions': "cook it\neat it",
     #     'meal_type': 'Breakfast'
     # }
-    # sample_ingredient_list = [
-    #     {
-    #         'label': 'chicken',
-    #         'unit_id': '1',
-    #         'amount': 1
-    #     },
-    #     {
-    #         'label': 'Cheddar Cheese',
-    #         'unit_id': '2',
-    #         'amount': 10
-    #     }
-    # ]
+    sample_ingredient_list = [
+        {
+            'label': 'chicken',
+            'unit_id': '1',
+            'amount': 1
+        },
+        {
+            'label': 'Cheddar Cheese',
+            'unit_id': '2',
+            'amount': 10
+        }
+    ]
     # edit_recipe(edit_sample_recipe_params, session=session, engine=engine)
-    # sample_recipe = {
-    #     'recipe_params': sample_recipe_params,
-    #     'ingredients': sample_ingredient_list
-    # }
+    sample_recipe = {
+        'recipe_params': sample_recipe_params,
+        'ingredients': sample_ingredient_list
+    }
 
-    # submit_new_recipe(sample_recipe)
+    submit_new_recipe(sample_recipe)
     # recipe_list = get_all_recipes(session=session)
     # for r in recipe_list:
     #     print(r)
