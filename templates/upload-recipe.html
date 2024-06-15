@@ -1,0 +1,116 @@
+
+{% extends 'base.html' %}
+{% block title %}Upload Recipe Template{% endblock %}
+<!--    <header class="site-header">-->
+<!--        <div class="site-id">-->
+<!--            <a href="index.html">recipe site</a>-->
+<!--        </div>-->
+<!--        <div class="section-line"></div>-->
+<!--        <nav class="site-nav" data-navstate="closed">-->
+<!--            <button class="menu-button">-->
+<!--                <span class="hide-visually">Menu</span>-->
+<!--                <svg width="80" height="24">-->
+<!--                    <title>Menu</title>-->
+<!--                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--            <ul>-->
+<!--                <li><a href="index.html">Home</a></li>-->
+<!--                <li><a href="all-recipes.html">All Recipes</a></li>-->
+<!--                <li><a href="recipes-chosen.html">Selected Recipes</a></li>-->
+<!--                <li><a href="upload-recipe.html">Upload A Recipe</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+{% block content %}
+{% include "navbar.html" %}
+
+    <main class="upload-recipe-main">
+        <section class="upload-recipe-hero">
+            <div class="upload-recipe-title">
+                <h1>Upload A Recipe</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis dolorum sapiente in
+                    consectetur error! Dolores?</p>
+            </div>
+        </section>
+
+        <section class="upload-recipe-form">
+            <div class="recipe-form">
+                <form>
+                    <label for="recipe-title">Recipe Title</label><br>
+                    <input type="text" id="recipe-title" name="recipe-title"><br>
+
+                    <label for="recipe-serves">Serves</label><br>
+                    <input type="text" id="recipe-serves" name="recipe-serves"><br>
+
+                    <label for="recipe-cook-time">Cook Time</label><br>
+                    <input type="text" id="recipe-cook-time" name="recipe-cook-time"><br>
+
+                    <label for="recipe-calories">Calories</label><br>
+                    <input type="text" id="recipe-calories" name="recipe-calories"><br>
+
+                    <div class="recipe-upload-added-ingredient">
+
+                        <div class="recipe-ingredients-input">
+                            <label for="recipe-ingredients-name">Ingredients</label>
+                            <input type="text" id="recipe-ingredients-name" name="recipe-ingredients">
+
+                            <label for="recipe-ingredients-amount">Amount</label>
+                            <input type="text" id="recipe-ingredients-amount" name="recipe-ingredients-amount">
+
+                            <label for="recipe-ingredients-unit">Unit of Measurement</label>
+                            <select name="recipe-ingredients-unit" id="recipe-ingredients-unit">
+                                <option value="default">select unit</option>
+                                <option value="teaspoon">Teaspoons</option>
+                                <option value="tablespoon">Tablespoons</option>
+                                <option value="cups">Cups</option>
+                                <option value="ounces">Ounces</option>
+                                <option value="pints">Pints</option>
+                                <option value="quart">Quarts</option>
+                                <option value="gallon">Gallons</option>
+                                <option value="pound">Pounds</option>
+                                <option value="">none</option>
+                            </select>
+                            <div class="recipe-ingredients-add-button">
+
+                                <button class="button" id="add-ingredient" type="button" onclick="addIngredient()">Add
+                                    Ingredient</button>
+                            </div>
+                        </div>
+                        <div class="added-ingredient-list">
+                            <ul class="ingredient-list" id="ingredient-list"></ul>
+                        </div>
+                    </div>
+
+                    <label for="recipe-directions">Directions</label><br>
+                    <textarea name="recipe-directions" id="recipe-directions"></textarea><br>
+
+                    <label for="image-upload">Upload an Image</label><br>
+                    <input class="button" type="file" id="image-upload"><br>
+
+                    <label for="recipe-category">Meal Type</label><br>
+                    <select name="recipe-category" id="recipe-category">
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="">Misc</option>
+                    </select><br>
+
+                    <button class="button" onclick="createCard()">submit</button>
+                    <!-- <button type="reset">reset</button> -->
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+<!-- JAVASCRIPT -->
+<script src="static/js/menu-icon.js"></script>
+<script src="static/js/recipe-upload.js"></script>
+<!-- <script src="js/all-recipes.js"></script> -->
+{% endblock %}

@@ -13,12 +13,12 @@ def home():
 @app.route("/recipes/<sort_by>")
 def all_recipes(sort_by):
     recipes = []
-    print(sort_by)
+    # print(sort_by)
     if sort_by:
         print(sort_by)
         recipe_list = db.meal_lookup(sort_by)
     else:
-        print("all")
+        # print("all")
         recipe_list = db.get_recipes()
     for r in recipe_list:
         recipe = {
@@ -33,7 +33,7 @@ def all_recipes(sort_by):
         }
         recipes.append(recipe)
         print(recipe)
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("all-recipes.html", recipes=recipes)
 
 
 @app.route("/recipe/<recipe_id>", methods=["GET", "POST"])

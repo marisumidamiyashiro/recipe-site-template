@@ -1,51 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Recipe Site{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Site</title>
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="static/css/style.css">
-</head>
-
-<body>
-
-    <header class="site-header main-page">
-        <div class="site-id">
-            <a href="index.html">recipe&nbspsite</a>
-        </div>
-        <div class="section-line"></div>
-        <nav class="site-nav" data-navstate="closed">
-            <button class="menu-button">
-                <span class="hide-visually">Menu</span>
-                <svg width="80" height="24">
-                    <title>Menu</title>
-                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>
-                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>
-                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>
-                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>
-                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>
-                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>
-                </svg>
-            </button>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="all-recipes.html">All Recipes</a></li>
-                <li><a href="recipes-chosen.html">Selected Recipes</a></li>
-                <li><a href="upload-recipe.html">Upload A Recipe</a></li>
-            </ul>
-        </nav>
-    </header>
-
+{% block content %}
+<!--    <header class="site-header main-page">-->
+<!--        <div class="site-id">-->
+<!--            <a href="index.html">recipe&nbspsite</a>-->
+<!--        </div>-->
+<!--        <div class="section-line"></div>-->
+<!--        <nav class="site-nav" data-navstate="closed">-->
+<!--            <button class="menu-button">-->
+<!--                <span class="hide-visually">Menu</span>-->
+<!--                <svg width="80" height="24">-->
+<!--                    <title>Menu</title>-->
+<!--                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--            <ul>-->
+<!--                <li><a href="index.html">Home</a></li>-->
+<!--                <li><a href="all-recipes.html">All Recipes</a></li>-->
+<!--                <li><a href="recipes-chosen.html">Selected Recipes</a></li>-->
+<!--                <li><a href="upload-recipe.html">Upload A Recipe</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+{% include "navbar.html" %}
     <main class="site-main">
         <section class="hero" style="background-image: url({{ url_for('static', filename='img/pizza.jpg')}});">
             <div class="container">
@@ -82,6 +65,4 @@
     </main>
 
     <script src="static/js/menu-icon.js"></script>
-</body>
-
-</html>
+{% endblock %}

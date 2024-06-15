@@ -1,5 +1,5 @@
 from sqlalchemy import ForeignKey
-from sqlalchemy import update, delete
+from sqlalchemy import update, delete, func
 from sqlalchemy.orm import Mapped, mapped_column
 from db_classes.db import Base, find_changes
 from db_classes.collection_db import Collection
@@ -61,7 +61,7 @@ def recipe_lookup(recipe_id, session):
 
 
 def meal_type_lookup(sort_by, session):
-    recipes = session.query(Recipe).filter(Recipe.meal_type == sort_by)
+    recipes = session.query(Recipe).filter(func.lower(Recipe.meal_type) == sort_by.lower())
     return recipes
 
 
