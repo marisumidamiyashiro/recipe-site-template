@@ -1,0 +1,221 @@
+
+{% extends 'base.html' %}
+{% block title %}Recipes Chosen | Shopping List{% endblock %}
+<!--    <header class="site-header">-->
+<!--        <div class="site-id">-->
+<!--            <a href="index.html">recipe site</a>-->
+<!--        </div>-->
+<!--        <div class="section-line"></div>-->
+<!--        <nav class="site-nav" data-navstate="closed">-->
+<!--            <button class="menu-button">-->
+<!--                <span class="hide-visually">Menu</span>-->
+<!--                <svg width="80" height="24">-->
+<!--                    <title>Menu</title>-->
+<!--                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--            <ul>-->
+<!--                <li><a href="index.html">Home</a></li>-->
+<!--                <li><a href="all-recipes.html">All Recipes</a></li>-->
+<!--                <li><a href="recipes-chosen.html">Selected Recipes</a></li>-->
+<!--                <li><a href="upload-recipe.html">Upload A Recipe</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+{% block content %}
+{% include "navbar.html" %}
+    <main class="recipe-chosen-main">
+        <section class="hero">
+            <div class="recipe-chosen-title">
+                <h1>selected recipes</h1>
+            </div>
+        </section>
+        <section class="recipe-chosen-ingredients-list">
+            <div class="recipe-chosen-singles-list">
+
+                <!-- Slider main container -->
+                <div class="swiper">
+
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>Shoyu Chicken</h1>
+                                <ul>
+                                    <li><span>Soy Sauce</span> <span>1</span> <span>cups</span></li>
+                                    <li><span>Brown Sugar</span> <span>1</span> <span>cups</span></li>
+                                    <li><span>Water</span> <span>1</span> <span>cups</span></li>
+                                    <li><span>Onion (chopped)</span> <span>1</span> <span></span></li>
+                                    <li><span>Garlic Cloves (minced)</span> <span>4</span> <span></span></li>
+                                    <li><span>Ginger Root (grated)</span> <span>1</span> <span>tablespoon</span></li>
+                                    <li><span>Dried Oregano</span> <span>1</span> <span>tablespoons</span></li>
+                                    <li><span>crushed red pepper flakes (optional)</span> <span>1</span>
+                                        <span>teaspoon</span>
+                                    </li>
+                                    <li><span>Ground cayenne pepper (optinal)</span> <span>1</span>
+                                        <span>teaspoons</span>
+                                    </li>
+                                    <li><span>Ground Paprika (optional)</span> <span>1</span> <span>teaspoons</span>
+                                    </li>
+                                    <li><span>Skinless Chicken Thighs</span> <span>5</span> <span>pounds</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>recipe title 2</h1>
+                                <ul>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>recipe title 3</h1>
+                                <ul>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>recipe title 4</h1>
+                                <ul>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>recipe title 5</h1>
+                                <ul>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>recipe title 6</h1>
+                                <ul>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-recipe-chosen-ingredients">
+                                <h1>recipe title 7</h1>
+                                <ul>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                    <li>Ingredient (Amount)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-controls">
+                        <!-- If we need pagination -->
+                        <!-- <div class="swiper-pagination"></div> -->
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-navigation-buttons">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="recipe-chosen-all-ingredients-list">
+                <div class="all-ingredients-list-title">
+                    <h3>Full List of Ingredients</h3>
+                </div>
+                <div class="all-ingredients-list">
+                    <ul>
+                        <li><span>Soy Sauce</span> <span>1</span> <span>cups</span></li>
+                        <li><span>Brown Sugar</span> <span>1</span> <span>cups</span></li>
+                        <li><span>Water</span> <span>1</span> <span>cups</span></li>
+                        <li><span>Onion (chopped)</span> <span>1</span> <span></span></li>
+                        <li><span>Garlic Cloves (minced)</span> <span>4</span> <span></span></li>
+                        <li><span>Ginger Root (grated)</span> <span>1</span> <span>tablespoon</span></li>
+                        <li><span>Dried Oregano</span> <span>1</span> <span>tablespoons</span></li>
+                        <li><span>crushed red pepper flakes (optional)</span> <span>1</span>
+                            <span>teaspoon</span>
+                        </li>
+                        <li><span>Ground cayenne pepper (optinal)</span> <span>1</span>
+                            <span>teaspoons</span>
+                        </li>
+                        <li><span>Ground Paprika (optional)</span> <span>1</span> <span>teaspoons</span>
+                        </li>
+                        <li><span>Skinless Chicken Thighs</span> <span>5</span> <span>pounds</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="static/js/menu-icon.js"></script>
+    <script src="static/js/swiper.js"></script>
+
+{% endblock %}

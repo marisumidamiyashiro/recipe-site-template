@@ -116,8 +116,8 @@ window.onload = (event) => {
 
     };
 
-    createCard()
-    createCard()
-    createCard()
-    createCard()
+//    createCard()
+//    createCard()
+//    createCard()
+//    createCard()
 };

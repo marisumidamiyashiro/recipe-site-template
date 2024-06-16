@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block title %}All Recipes{% endblock %}
+<!--    <header class="site-header">-->
+<!--        <div class="site-id">-->
+<!--            <a href="index.html">recipe site</a>-->
+<!--        </div>-->
+<!--        <div class="section-line"></div>-->
+<!--        <nav class="site-nav" data-navstate="closed">-->
+<!--            <button class="menu-button">-->
+<!--                <span class="hide-visually">Menu</span>-->
+<!--                <svg width="80" height="24">-->
+<!--                    <title>Menu</title>-->
+<!--                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>-->
+<!--                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>-->
+<!--                </svg>-->
+<!--            </button>-->
+<!--            <ul>-->
+<!--                <li><a href="index.html">Home</a></li>-->
+<!--                <li><a href="all-recipes.html">All Recipes</a></li>-->
+<!--                <li><a href="recipes-chosen.html">Selected Recipes</a></li>-->
+<!--                <li><a href="upload-recipe.html">Upload A Recipe</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+{% block content %}
+{% include "navbar.html" %}
+    <main class="all-recipes-main">
+        <section class="all-recipes-hero">
+            <div class="all-recipes-title">
+                <a href="{{ url_for('all_recipes')}}"> <h1>All Recipes</h1></a>
+            </div>
+            <div class="all-recipes-filter">
+                <a href="{{ url_for('all_recipes', sort_by='breakfast')}}"><button class="breakfast">breakfast</button></a>
+                <a href="{{ url_for('all_recipes', sort_by='lunch')}}"><button class="lunch">lunch</button></a>
+                <a href="{{ url_for('all_recipes', sort_by='dinner')}}"><button class="dinner">dinner</button></a>
+                <a href="{{ url_for('all_recipes', sort_by='desert')}}"><button class="dessert">dessert</button></a>
+                <a href="{{ url_for('all_recipes', sort_by='misc')}}"><button class="misc">misc</button></a>
+<!--                <button class="favorites">favorites</button>-->
+            </div>
+        </section>
+
+        <section class="all-recipes-cards">
+            <div class="all-recipes-container" id="recipes-container">
+                {% for recipe in recipes %}
+                <div class="recipe-card" data-owner="{{recipe.user_id}}">
+                    <div class="recipe-card-image">
+                        <img src="{{recipe.photo_url}}" alt="" width="250px" height="250px">
+                    </div>
+                    <div class="recipe-card-info">
+                        <div class="recipe-card-title">
+                            <h1>{{recipe.name}}</h1>
+                            <span class="recipe-category">{{recipe.meal_type}}</span>
+                        </div>
+                        <div class="recipe-card-details">
+                            <ul class="recipe-card-list">
+                                <li><span>serves</span> <span>{{recipe.servings}} People</span></li>
+                                <li><span>cook time</span> <span>{{recipe.cook_time}} min</span></li>
+                                <li><span>calories</span> <span>{{recipe.calories}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="recipe-card-button">
+                            <a href="{{ url_for('selected_recipe', recipe_id=recipe.recipe_id) }}" class="button">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+<!--                <div class="recipe-card">-->
+<!--                    <div class="recipe-card-image">-->
+<!--                        <img src="static/img/pizza.jpg" alt="" width="250px" height="250px">-->
+<!--                    </div>-->
+<!--                    <div class="recipe-card-info">-->
+<!--                        <div class="recipe-card-title">-->
+<!--                            <h1>recipe title</h1>-->
+<!--                            <span class="recipe-category">lunch</span>-->
+<!--                        </div>-->
+<!--                        <div class="recipe-card-details">-->
+<!--                            <ul class="recipe-card-list">-->
+<!--                                <li><span>serves</span> <span>x People</span></li>-->
+<!--                                <li><span>cook time</span> <span>00 min</span></li>-->
+<!--                                <li><span>calories</span> <span>00</span></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        <div class="recipe-card-button">-->
+<!--                            <a href="recipe.html" class="button">View Recipe</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="recipe-card">-->
+<!--                    <div class="recipe-card-image">-->
+<!--                        <img src="static/img/pizza.jpg" alt="" width="250px" height="250px">-->
+<!--                    </div>-->
+<!--                    <div class="recipe-card-info">-->
+<!--                        <div class="recipe-card-title">-->
+<!--                            <h1>recipe title</h1>-->
+<!--                            <span class="recipe-category">dinner</span>-->
+<!--                        </div>-->
+<!--                        <div class="recipe-card-details">-->
+<!--                            <ul class="recipe-card-list">-->
+<!--                                <li><span>serves</span> <span>x People</span></li>-->
+<!--                                <li><span>cook time</span> <span>00 min</span></li>-->
+<!--                                <li><span>calories</span> <span>00</span></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        <div class="recipe-card-button">-->
+<!--                            <a href="recipe.html" class="button">View Recipe</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+        </section>
+    </main>
+
+    <script src="{{url_for('static', filename='js/menu-icon.js')}}"></script>
+    <script src="{{url_for('static', filename='js/all-recipes.js')}}"></script>
+<!--    <script src="static/js/menu-icon.js"></script>-->
+<!--    <script src="static/js/all-recipes.js"></script>-->
+{% endblock %}
