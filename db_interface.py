@@ -5,7 +5,7 @@ from db_classes.recipe_db import (create_recipe, delete_recipe, recipe_lookup, e
                                   meal_type_lookup)
 from db_classes.ingredient_db import create_ingredient
 from db_classes.recipe_ingredient_db import (create_recipe_ingredient, delete_recipe_ingredients)
-from db_classes.unit_db import create_unit, get_unit
+from db_classes.unit_db import create_unit, get_unit, get_all_units
 
 engine = create_engine("sqlite:///recipesite.db")
 session = bind_engine(engine)
@@ -80,6 +80,13 @@ def change_recipe(recipe):
 def meal_lookup(sort_by):
     return meal_type_lookup(sort_by, session=session)
 
+
+def get_units():
+    units = get_all_units(session=session)
+    unit_list = []
+    for unit in units:
+        unit_list.append(unit.label)
+    return unit_list
 
 def main() -> None:
     ...

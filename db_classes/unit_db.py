@@ -27,3 +27,6 @@ def create_unit(unit_label, session):
     session.refresh(new_unit)
     return new_unit.unit_id
 
+
+def get_all_units(session):
+    return session.query(Unit).all()

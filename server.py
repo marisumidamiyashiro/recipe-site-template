@@ -1,7 +1,14 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 
+import os
+import db_interface
 import db_interface as db
+
+
+UPLOAD_FOLDER = '/static/img'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route("/")
@@ -49,10 +56,14 @@ def selected_recipe(recipe_id):
         ...
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    db.submit_new_recipe("1")
-    ...
+    if request.method == "POST":
+        for item in request.form:
+            print(f"{item} | {request.form[item]}")
+    unit_list = db_interface.get_units()
+    # print(unit_list)
+    return render_template('upload-recipe.html', units=unit_list)
 
 
 if __name__ == '__main__':

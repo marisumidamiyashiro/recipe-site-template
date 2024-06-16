@@ -41,7 +41,7 @@
 
         <section class="upload-recipe-form">
             <div class="recipe-form">
-                <form>
+                <form action="/add_recipe" method="POST">
                     <label for="recipe-title">Recipe Title</label><br>
                     <input type="text" id="recipe-title" name="recipe-title"><br>
 
@@ -66,15 +66,19 @@
                             <label for="recipe-ingredients-unit">Unit of Measurement</label>
                             <select name="recipe-ingredients-unit" id="recipe-ingredients-unit">
                                 <option value="default">select unit</option>
-                                <option value="teaspoon">Teaspoons</option>
-                                <option value="tablespoon">Tablespoons</option>
-                                <option value="cups">Cups</option>
-                                <option value="ounces">Ounces</option>
-                                <option value="pints">Pints</option>
-                                <option value="quart">Quarts</option>
-                                <option value="gallon">Gallons</option>
-                                <option value="pound">Pounds</option>
-                                <option value="">none</option>
+<!--                                <option value="teaspoon">Teaspoons</option>-->
+<!--                                <option value="tablespoon">Tablespoons</option>-->
+<!--                                <option value="cups">Cups</option>-->
+<!--                                <option value="ounces">Ounces</option>-->
+<!--                                <option value="pints">Pints</option>-->
+<!--                                <option value="quart">Quarts</option>-->
+<!--                                <option value="gallon">Gallons</option>-->
+<!--                                <option value="pound">Pounds</option>-->
+<!--                                <option value="">none</option>-->
+                                {% for unit in units %}
+                                <option value="{{unit}}">{{unit}}</option>
+                                {% endfor %}
+
                             </select>
                             <div class="recipe-ingredients-add-button">
 
@@ -110,7 +114,7 @@
 
 
 <!-- JAVASCRIPT -->
-<script src="static/js/menu-icon.js"></script>
-<script src="static/js/recipe-upload.js"></script>
+<script src="{{url_for('static', filename='js/menu-icon.js')}}"></script>
+<script src="{{url_for('static', filename='js/recipe-upload.js')}}"></script>
 <!-- <script src="js/all-recipes.js"></script> -->
 {% endblock %}
