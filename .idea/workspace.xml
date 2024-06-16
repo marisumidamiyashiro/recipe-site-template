@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="added files for db and server">
-      <change afterPath="$PROJECT_DIR$/templates/all-recipes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recipe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recipes-chosen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/upload-recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/temp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/temp.iml" afterDir="false" />
+    <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="created templates for base, header, and footer. converted all recipes to use database and have filter functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/all-recipes.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/all-recipes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,12 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1718416511315</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="created templates for base, header, and footer. converted all recipes to use database and have filter functionality">
+      <option name="closed" value="true" />
+      <created>1718475902322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718475902322</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added files for db and server" />
-    <option name="LAST_COMMIT_MESSAGE" value="added files for db and server" />
+    <MESSAGE value="created templates for base, header, and footer. converted all recipes to use database and have filter functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="created templates for base, header, and footer. converted all recipes to use database and have filter functionality" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/recipe_site_template$server.coverage" NAME="server Coverage Results" MODIFIED="1718420208092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
