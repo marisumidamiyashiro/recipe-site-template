@@ -5,7 +5,7 @@ from db_classes.recipe_db import (create_recipe, delete_recipe, recipe_lookup, e
                                   meal_type_lookup)
 from db_classes.ingredient_db import create_ingredient
 from db_classes.recipe_ingredient_db import (create_recipe_ingredient, delete_recipe_ingredients)
-
+from db_classes.unit_db import create_unit, get_unit
 
 engine = create_engine("sqlite:///recipesite.db")
 session = bind_engine(engine)
@@ -60,14 +60,14 @@ def main() -> None:
     #     "sort": 1
     # }
     # update_recipe_ingredient(sample_recipe_ingredient, session=session, engine=engine)
-    sample_recipe_params = {
-        'name': 'Chicken n Cheese',
-        'cook_time': '20 minutes',
-        'servings': 1,
-        'calories': 300,
-        'instructions': "cook it\neat it",
-        'meal_type': 'Breakfast'
-    }
+    # sample_recipe_params = {
+    #     'name': 'Chicken n Cheese',
+    #     'cook_time': '20 minutes',
+    #     'servings': 1,
+    #     'calories': 300,
+    #     'instructions': "cook it\neat it",
+    #     'meal_type': 'Breakfast'
+    # }
     # edit_sample_recipe_params = {
     #     'recipe_id': 2,
     #     'name': 'Chicken n Cheese',
@@ -77,25 +77,25 @@ def main() -> None:
     #     'instructions': "cook it\neat it",
     #     'meal_type': 'Breakfast'
     # }
-    sample_ingredient_list = [
-        {
-            'label': 'chicken',
-            'unit_id': '1',
-            'amount': 1
-        },
-        {
-            'label': 'Cheddar Cheese',
-            'unit_id': '2',
-            'amount': 10
-        }
-    ]
+    # sample_ingredient_list = [
+    #     {
+    #         'label': 'chicken',
+    #         'unit_id': '1',
+    #         'amount': 1
+    #     },
+    #     {
+    #         'label': 'Cheddar Cheese',
+    #         'unit_id': '2',
+    #         'amount': 10
+    #     }
+    # ]
     # edit_recipe(edit_sample_recipe_params, session=session, engine=engine)
-    sample_recipe = {
-        'recipe_params': sample_recipe_params,
-        'ingredients': sample_ingredient_list
-    }
-
-    submit_new_recipe(sample_recipe)
+    # sample_recipe = {
+    #     'recipe_params': sample_recipe_params,
+    #     'ingredients': sample_ingredient_list
+    # }
+    #
+    # submit_new_recipe(sample_recipe)
     # recipe_list = get_all_recipes(session=session)
     # for r in recipe_list:
     #     print(r)
@@ -110,7 +110,9 @@ def main() -> None:
     # recipe_ingredient1 = create_recipe_ingredient(recipe, chicken_id, whole_unit, 1, 1, session=session)
     # recipe_ingredient2 = create_recipe_ingredient(recipe, parmesan_id, oz_unit, 5, 2, session=session)
 
-
+    units = ["teaspoons", "tablespoons", "cups", "ounces", "pints", "gallons", 'lbs', "none"]
+    for unit in units:
+        create_unit(unit, session=session)
 
 
 if __name__ == '__main__':

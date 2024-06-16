@@ -43,13 +43,13 @@
         <section class="recipe-links">
             <div class="container">
                 <div class="links">
-                    <a href="all-recipes.html" class="button">
+                    <a href="{{url_for('all_recipes')}}" class="button">
                         <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
                         </span>
                         <span class="button-text">get started</span>
                     </a>
-                    <a href="recipe.html" class="button">
+                    <a href="{{url_for('selected_recipe', recipe_id=1)}}" class="button">
                         <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
                         </span>
