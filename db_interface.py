@@ -14,6 +14,40 @@ SQLALCH_INSTANCE = '_sa_instance_state'
 # recipe.get_all_recipes2(session)
 
 
+def create_dummy_recipe():
+
+    units = ["teaspoons", "tablespoons", "cups", "ounces", "pints", "gallons", 'lbs', "none"]
+    for unit in units:
+        create_unit(unit, session=session)
+
+    sample_recipe_params = {
+        'name': 'Chicken n Cheese',
+        'cook_time': '20 minutes',
+        'servings': 1,
+        'calories': 300,
+        'instructions': "cook it\neat it",
+        'meal_type': 'Breakfast'
+    }
+    sample_ingredient_list = [
+        {
+            'label': 'chicken',
+            'unit_id': '8',
+            'amount': 1
+        },
+        {
+            'label': 'Cheddar Cheese',
+            'unit_id': '4',
+            'amount': 10
+        }
+    ]
+    sample_recipe = {
+        'recipe_params': sample_recipe_params,
+        'ingredients': sample_ingredient_list
+    }
+
+    submit_new_recipe(sample_recipe)
+
+
 def submit_new_recipe(recipe):
     recipe_params = {k: v for k, v in recipe["recipe_params"].items() if v is not None}
     recipe_id = create_recipe(**recipe_params, session=session)
@@ -110,9 +144,6 @@ def main() -> None:
     # recipe_ingredient1 = create_recipe_ingredient(recipe, chicken_id, whole_unit, 1, 1, session=session)
     # recipe_ingredient2 = create_recipe_ingredient(recipe, parmesan_id, oz_unit, 5, 2, session=session)
 
-    units = ["teaspoons", "tablespoons", "cups", "ounces", "pints", "gallons", 'lbs', "none"]
-    for unit in units:
-        create_unit(unit, session=session)
 
 
 if __name__ == '__main__':
