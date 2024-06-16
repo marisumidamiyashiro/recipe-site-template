@@ -43,7 +43,7 @@ def selected_recipe(recipe_id):
         recipe = db.get_recipe(recipe_id)
         print(recipe.__dict__)
 
-        return render_template("single_recipe.html", recipe=recipe)
+        return render_template("recipe.html", recipe=recipe)
 
     elif request.method == "POST":
         ...

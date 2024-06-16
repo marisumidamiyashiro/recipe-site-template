@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Single Recipe{% endblock %}
+{% block title %} {{recipe.name}} {% endblock %}
 <!--    <header class="site-header">-->
 <!--        <div class="site-id">-->
 <!--            <a href="index.html">recipe&nbspsite</a>-->
@@ -31,13 +31,14 @@
     <main class="recipe-template-main">
         <section class="hero">
             <div class="recipe-title">
-                <h1>recipe&nbsptitle</h1>
+<!--                <h1>recipe&nbsptitle</h1>-->
+                    <h1>{{recipe.name}}</h1>
             </div>
             <div class="recipe-details">
                 <ul>
-                    <li><span>serves</span> <span>x People</span></li>
-                    <li><span>cook time</span> <span>00 min</span></li>
-                    <li><span>calories</span> <span>00</span></li>
+                    <li><span>serves</span> <span>{{recipe.servings}} People</span></li>
+                    <li><span>cook time</span> <span>{{recipe.cook_time}}</span></li>
+                    <li><span>calories</span> <span>{{recipe.calories}}</span></li>
                 </ul>
             </div>
         </section>
@@ -45,58 +46,65 @@
             <div class="ingredients-list">
                 <h1>ingredients</h1>
                 <ul>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
+
+                    {% for ingredient in recipe.ingredients %}
+                    <li>-->
+                        <span class="ingredient-name">{{ingredient[0]}}</span>
+                        <span class="ingredient-amount">{{ingredient[1]}} {{ingredient[2]}}</span>
                     </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>&nbsp<span
-                            class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
-                    <li>
-                        <span class="ingredient-name">ingredient</span>
-                        <span class="ingredient-amount">amount</span>
-                    </li>
+                    {% endfor %}
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>&nbsp<span-->
+<!--                            class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span class="ingredient-name">ingredient</span>-->
+<!--                        <span class="ingredient-amount">amount</span>-->
+<!--                    </li>-->
                 </ul>
             </div>
             <div class="ingredients-image">
-                <img src="img/pizza.jpg" alt="">
+                <img src="{{recipe.photo_url}}" alt="">
             </div>
         </section>
         <!-- <section class="recipe-buttons">
@@ -106,32 +114,33 @@
         </section> -->
         <section class="recipe-directions">
             <div class="directions-image">
-                <img src="img/pizza.jpg" alt="">
+                <img src="{{recipe.photo_url}}" alt="">
             </div>
             <div class="directions-list">
                 <h1>directions</h1>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, eius!</li>
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi debitis hic facere eos
-                        incidunt, ea necessitatibus. Maiores dignissimos veritatis incidunt perspiciatis eius nobis
-                        nostrum.</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus harum dolores quo magni
-                        recusandae praesentium!</li>
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, laboriosam?</li>
-                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At impedit reiciendis, eum optio
-                        aperiam commodi.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, numquam.</li>
-                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex atque ullam asperiores aut iste, at
-                        earum dolore necessitatibus eligendi magnam?</li>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima non dignissimos ipsam aliquid
-                        nostrum magnam alias voluptatum quam libero mollitia magni vero, voluptas dolorem. Eos?</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, dolorum?</li>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eum rerum architecto ipsa deserunt
-                        minima?</li>
-                </ul>
+<!--                <ul>-->
+<!--                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, eius!</li>-->
+<!--                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi debitis hic facere eos-->
+<!--                        incidunt, ea necessitatibus. Maiores dignissimos veritatis incidunt perspiciatis eius nobis-->
+<!--                        nostrum.</li>-->
+<!--                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus harum dolores quo magni-->
+<!--                        recusandae praesentium!</li>-->
+<!--                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, laboriosam?</li>-->
+<!--                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At impedit reiciendis, eum optio-->
+<!--                        aperiam commodi.</li>-->
+<!--                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, numquam.</li>-->
+<!--                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex atque ullam asperiores aut iste, at-->
+<!--                        earum dolore necessitatibus eligendi magnam?</li>-->
+<!--                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima non dignissimos ipsam aliquid-->
+<!--                        nostrum magnam alias voluptatum quam libero mollitia magni vero, voluptas dolorem. Eos?</li>-->
+<!--                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, dolorum?</li>-->
+<!--                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo eum rerum architecto ipsa deserunt-->
+<!--                        minima?</li>-->
+<!--                </ul>-->
+                <p>{{recipe.instructions}}</p>
             </div>
         </section>
     </main>
 
-    <script src="static/js/menu-icon.js"></script>
+    <script src="{{url_for('static', filename='js/menu-icon.js')}}"></script>
 {% endblock %}
