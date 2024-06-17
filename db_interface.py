@@ -16,7 +16,7 @@ SQLALCH_INSTANCE = '_sa_instance_state'
 
 def create_dummy_recipe():
 
-    units = ["teaspoons", "tablespoons", "cups", "ounces", "pints", "gallons", 'lbs', "none"]
+    units = ["teaspoons", "tablespoons", "cups", "ounces", "pints", "gallons", 'lbs', "cloves", "cans", "none"]
     for unit in units:
         create_unit(unit, session=session)
 
@@ -89,6 +89,7 @@ def get_units():
     return unit_list
 
 def main() -> None:
+    create_dummy_recipe()
     ...
     # recipe = recipe_lookup(1, session=session)
     # print(recipe.__dict__)

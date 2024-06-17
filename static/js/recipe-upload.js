@@ -34,3 +34,49 @@ function addIngredient() {
 
     ingredientList.append(newItem);
 };
+
+
+function submit_recipe() {
+//    names = $(".new-ingredient-name")
+//    amounts = $(".new-ingredient-amount")
+//    units = $(".new-ingredient-unit")
+    ingredient_list = []
+    var names = $(".new-ingredient-name").map(function() {
+    return this.innerHTML;
+}).get();
+    var amounts = $(".new-ingredient-amount").map(function() {
+    return this.innerHTML;
+}).get();
+    var units = $(".new-ingredient-unit").map(function() {
+    return this.innerHTML;
+}).get();
+
+    for (let i = 0; i < names.length; i++){
+        new_ingredient = {
+        'label': names[i],
+        'unit': units[i],
+        'amount': amounts[i]
+        }
+        ingredient_list.push(new_ingredient)
+    }
+
+    title = $("#recipe-title").val()
+    serves= $("#recipe-serves").val()
+    cook_time= $("#recipe-cook-time").val()
+    calories= $("#recipe-calories").val()
+    directions= $("#recipe-directions").val()
+    meal_type= $("#recipe-category").val()
+
+console.log(names, amounts, units);
+  $.post(post_url,
+  {
+    name: "Donald Duck",
+    city: "Duckburg"
+  },
+  function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+
+
+}
+//console.log(post_url)

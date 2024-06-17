@@ -105,15 +105,17 @@
                         <option value="">Misc</option>
                     </select><br>
 
-                    <button class="button" onclick="createCard()">submit</button>
+
                     <!-- <button type="reset">reset</button> -->
                 </form>
+                 <button class="button" onclick="submit_recipe()">submit</button>
             </div>
         </section>
     </main>
 
 
 <!-- JAVASCRIPT -->
+<script>post_url = "{{url_for('add_recipe')}}" </script>
 <script src="{{url_for('static', filename='js/menu-icon.js')}}"></script>
 <script src="{{url_for('static', filename='js/recipe-upload.js')}}"></script>
 <!-- <script src="js/all-recipes.js"></script> -->
