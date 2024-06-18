@@ -47,13 +47,27 @@
     </header>
 
     <main class="site-main">
-        <section class="hero" >
+        <section class="hero">
             <div class="container">
                 <div class="all-recipes-links">
-                    <h1>view<br>all<br>recipes</h1>
+                    <!-- <h1>view<br>all<br>recipes</h1>
                     <a href="all-recipes.html">
                         <span class="icon arrow"></span>
-                    </a>
+                    </a> -->
+
+                    <div class="form-container">
+                        <label for="username">username</label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+
+                        <label for="password">password</label>
+                        <input type="text" placeholder="Enter Password" name="password" required>
+
+                        <label>
+                            <input type="checkbox" name="remember" checked="checked">Remember Me
+                        </label>
+
+                        <button type="submit">Login</button>
+                    </div>
                 </div>
             </div>
         </section>

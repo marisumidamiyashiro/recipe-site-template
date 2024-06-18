@@ -456,6 +456,40 @@ h3 {
   backdrop-filter: blur(10px);
   border-radius: 1rem;
 }
+.site-main .hero .container .all-recipes-links .form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+}
+.site-main .hero .container .all-recipes-links .form-container label {
+  text-transform: capitalize;
+  font-family: public-sans, sans-serif;
+  color: #333;
+  margin-top: 0.5em;
+}
+.site-main .hero .container .all-recipes-links .form-container input {
+  padding: 0.5em;
+  border: 1px solid #ff8f45;
+  border-radius: 5px;
+}
+.site-main .hero .container .all-recipes-links .form-container button {
+  color: #ff8f45;
+  font-family: public-sans, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.5em;
+  padding: 1em;
+  border: 1px solid #ff8f45;
+  border-radius: 15px;
+  background-color: #FAE5D3;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.site-main .hero .container .all-recipes-links .form-container button:hover {
+  color: #FAE5D3;
+  background-color: #ff8f45;
+  border: 1px solid #FAE5D3;
+}
 .site-main .hero .container .all-recipes-links h1 {
   color: #FAE5D3;
   margin: 4em 5em 1em 5em;

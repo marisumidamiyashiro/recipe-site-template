@@ -28,6 +28,46 @@
                 backdrop-filter: blur(10px);
                 border-radius: 1rem;
 
+                .form-container {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 3em;
+
+                    label {
+                        text-transform: capitalize;
+                        font-family: $font-sans-serif;
+                        color: #333;
+                        margin-top: .5em;
+                        // font-weight: 700;
+                    }
+
+                    input {
+                        padding: .5em;
+                        border: 1px solid $button-color;
+                        border-radius: 5px;
+                    }
+
+                    button {
+                        color: $button-color;
+                        font-family: $font-sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        margin-top: .5em;
+                        padding: 1em;
+                        border: 1px solid $button-color;
+                        border-radius: 15px;
+                        background-color: $accent-color;
+                        cursor: pointer;
+                        transition: all .2s ease-in-out;
+
+                        &:hover {
+                            color: $accent-color;
+                            background-color: $button-color;
+                            border: 1px solid $accent-color;
+                        }
+                    }
+                }
+
                 h1 {
                     color: $accent-color;
                     margin: 4em 5em 1em 5em;
