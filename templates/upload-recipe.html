@@ -41,7 +41,7 @@
 
         <section class="upload-recipe-form">
             <div class="recipe-form">
-                <form action="/add_recipe" method="POST">
+                <form onsubmit="return false;">
                     <label for="recipe-title">Recipe Title</label><br>
                     <input type="text" id="recipe-title" name="recipe-title"><br>
 
@@ -76,7 +76,7 @@
 <!--                                <option value="pound">Pounds</option>-->
 <!--                                <option value="">none</option>-->
                                 {% for unit in units %}
-                                <option value="{{unit}}">{{unit}}</option>
+                                <option value="{{unit.label}}" data-id="{{unit.unit_id}}">{{unit.label}}</option>
                                 {% endfor %}
 
                             </select>
@@ -107,8 +107,8 @@
 
 
                     <!-- <button type="reset">reset</button> -->
+                    <button class="button" onclick="submit_recipe()">submit</button>
                 </form>
-                 <button class="button" onclick="submit_recipe()">submit</button>
             </div>
         </section>
     </main>

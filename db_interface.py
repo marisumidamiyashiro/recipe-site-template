@@ -50,12 +50,17 @@ def create_dummy_recipe():
 
 def submit_new_recipe(recipe):
     recipe_params = {k: v for k, v in recipe["recipe_params"].items() if v is not None}
+    print(f"recipe params: {recipe_params}")
     recipe_id = create_recipe(**recipe_params, session=session)
+    print(f"recipe_id: {recipe_id}")
     i = 1
     for ingredient in recipe["ingredients"]:
         ingredient_id = create_ingredient(ingredient["label"], session=session)
-
-        create_recipe_ingredient(recipe_id, ingredient_id, ingredient["unit_id"], ingredient["amount"], i,
+        print(f"ingredient id: {ingredient_id}")
+        print(f"unit id: {ingredient["unit"]}")
+        print(f"amount: {ingredient["amount"]}")
+        print(f"sort: {i}")
+        create_recipe_ingredient(recipe_id, ingredient_id, ingredient["unit"], ingredient["amount"], i,
                                  session=session)
         i += 1
 
@@ -86,7 +91,7 @@ def get_units():
     unit_list = []
     for unit in units:
         unit_list.append(unit.label)
-    return unit_list
+    return units
 
 def main() -> None:
     create_dummy_recipe()

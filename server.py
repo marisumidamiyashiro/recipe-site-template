@@ -59,18 +59,12 @@ def selected_recipe(recipe_id):
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        print("test")
-        # recipe_params = {
-        #     'name': request.form["recipe-title"],
-        #     'cook_time': request.form["recipe-cook-time"],
-        #     'servings': request.form["recipe-serves"],
-        #     'calories': request.form["recipe-calories"],
-        #     'instructions': request.form["recipe-directions"],
-        #     'meal_type': request.form["recipe-category"]
-        # }
-        # for item in request.form:
-        #     print(f"{item} | {request.form[item]}")
-        print(request.form)
+        form = request.get_json()
+        recipe_params = form["recipe_params"]
+        ingredient_list = form['ingredients']
+        print(recipe_params)
+        print(ingredient_list)
+        db_interface.submit_new_recipe(form)
     unit_list = db_interface.get_units()
     # print(unit_list)
     return render_template('upload-recipe.html', units=unit_list)

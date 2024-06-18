@@ -15,6 +15,7 @@ function addIngredient() {
     ingredientAmount.textContent = amount;
     let ingredientUnit = document.createElement("span");
     ingredientUnit.textContent = unit;
+    ingredientUnit.id = $('#recipe-ingredients-unit').find('option:selected').data('id')
     let removeButton = document.createElement("button");
 
     removeButton.textContent = "X";
@@ -48,7 +49,7 @@ function submit_recipe() {
     return this.innerHTML;
 }).get();
     var units = $(".new-ingredient-unit").map(function() {
-    return this.innerHTML;
+    return this.id;
 }).get();
 
     for (let i = 0; i < names.length; i++){
@@ -66,16 +67,47 @@ function submit_recipe() {
     calories= $("#recipe-calories").val()
     directions= $("#recipe-directions").val()
     meal_type= $("#recipe-category").val()
+    console.log(title)
+    console.log(serves)
+    console.log(cook_time)
+    console.log(calories)
+    console.log(directions)
+    console.log(meal_type)
+
+    recipe_params = {
+    'name': title,
+    'cook_time': cook_time,
+    'servings': serves,
+    'calories': calories,
+    'instructions': directions,
+    'meal_type': meal_type
+    }
+ recipe_data =  {
+    recipe_params: recipe_params,
+    ingredients: ingredient_list
+  }
 
 console.log(names, amounts, units);
-  $.post(post_url,
-  {
-    name: "Donald Duck",
-    city: "Duckburg"
-  },
-  function(data, status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
+//  $.post(post_url,
+//  {
+//    recipe_params: recipe_params,
+//    ingredients: ingredient_list
+//  },
+//  function(data, status){
+//    alert("Data: " + data + "\nStatus: " + status);
+//  });
+    $.ajax({
+    type:"POST",
+    contentType: "application/json",
+    url: post_url,
+    dataType: "json",
+    data: JSON.stringify(recipe_data),
+    success : function(result) {
+      alert(result);
+    },error : function(result){
+       console.log(result);
+    }
+    });
 
 
 }
