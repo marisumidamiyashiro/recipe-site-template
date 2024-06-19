@@ -650,6 +650,14 @@ h3 {
 .recipe-template-main .recipe-directions .directions-list h1 {
   font-size: 2em;
 }
+.recipe-template-main .recipe-directions .directions-list p {
+  padding: 0;
+  color: #333;
+  font-family: public-sans, sans-serif;
+  line-height: 1.5em;
+  padding: 1em 0;
+  white-space: pre-line;
+}
 .recipe-template-main .recipe-directions .directions-list ul {
   padding: 0;
 }
