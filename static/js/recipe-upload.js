@@ -1,11 +1,24 @@
 // RECIPE UPLOAD | ADD INGREDIENT FUNCTION
 function addIngredient() {
-
+    message = ""
     let ingredient = document.getElementById("recipe-ingredients-name").value;
+    console.log(ingredient == '')
+    if(ingredient == ''){
+    message+="Must include ingredient name\n"
+    }
     let amount = document.getElementById("recipe-ingredients-amount").value;
+
+    if(amount == "" || isNaN(amount)){
+    message+="Must include a number as ingredient amount\n"
+    }
     let unit = document.getElementById("recipe-ingredients-unit").value;
+    console.log(unit)
+    if(unit == "default"){
+    message+="Must include ingredient unit\n"
+    }
     let result = ingredient + amount + unit;
     console.log(result)
+    if(message == ""){
 
     let ingredientList = document.getElementById("ingredient-list");
     let newItem = document.createElement("li");
@@ -34,10 +47,15 @@ function addIngredient() {
     newItem.append(removeButton);
 
     ingredientList.append(newItem);
+    }
+    else{
+        form_alert(message)
+    }
 };
 
 
 function submit_recipe() {
+message = ""
 //    names = $(".new-ingredient-name")
 //    amounts = $(".new-ingredient-amount")
 //    units = $(".new-ingredient-unit")
@@ -45,6 +63,7 @@ function submit_recipe() {
     var names = $(".new-ingredient-name").map(function() {
     return this.innerHTML;
 }).get();
+
     var amounts = $(".new-ingredient-amount").map(function() {
     return this.innerHTML;
 }).get();
@@ -60,12 +79,30 @@ function submit_recipe() {
         }
         ingredient_list.push(new_ingredient)
     }
+    if(ingredient_list.length==0){ message+="Must add ingredients\n" }
 
     title = $("#recipe-title").val()
+    if (title == ""){ message += "Must include a recipe title\n" }
+
     serves= $("#recipe-serves").val()
+    if(serves == ""){ serves = 0}
+    else if(isNaN(serves)){ message += "Servings must be a number" }
+
     cook_time= $("#recipe-cook-time").val()
+    if(cook_time == ""){cook_time = "?? hours"}
+
     calories= $("#recipe-calories").val()
+    console.log(isNaN(calories))
+    if(calories == ""){calories=0}
+    else if(isNaN(calories)){message += "Calories must be a number"}
+
     directions= $("#recipe-directions").val()
+    if (directions == ""){
+        message += "Must include directions\n"
+    }
+    image_url = $('#image-upload').val()
+    if(image_url==""){}
+    else if(!check_url(image_url)){message+="Must include a valid url for recipe image"}
     meal_type= $("#recipe-category").val()
     console.log(title)
     console.log(serves)
@@ -80,22 +117,19 @@ function submit_recipe() {
     'servings': serves,
     'calories': calories,
     'instructions': directions,
-    'meal_type': meal_type
+    'meal_type': meal_type,
+    'photo_url': image_url
     }
  recipe_data =  {
     recipe_params: recipe_params,
     ingredients: ingredient_list
   }
-
+console.log(recipe_data)
 console.log(names, amounts, units);
-//  $.post(post_url,
-//  {
-//    recipe_params: recipe_params,
-//    ingredients: ingredient_list
-//  },
-//  function(data, status){
-//    alert("Data: " + data + "\nStatus: " + status);
-//  });
+ if(message != ""){
+    form_alert(message)
+    }
+ else{
     $.ajax({
     type:"POST",
     contentType: "application/json",
@@ -108,7 +142,35 @@ console.log(names, amounts, units);
        console.log(result);
     }
     });
+ }
+//  $.post(post_url,
+//  {
+//    recipe_params: recipe_params,
+//    ingredients: ingredient_list
+//  },
+//  function(data, status){
+//    alert("Data: " + data + "\nStatus: " + status);
+//  });
+
+
 
 
 }
 //console.log(post_url)
+
+function form_alert(message){
+    console.log(message)
+    alert(message)
+}
+
+function check_url(string){
+let url;
+
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+
+  return url.protocol === "http:" || url.protocol === "https:";
+}
