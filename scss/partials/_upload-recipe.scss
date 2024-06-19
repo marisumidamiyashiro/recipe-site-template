@@ -23,8 +23,8 @@
     }
 
     .recipe-form {
-        border: 1px solid $button-color;
-        max-width: 750px;
+        // border: 1px solid $button-color;
+        max-width: 80vw;
         margin: 5em auto;
         padding: 1.5em;
         display: flex;
@@ -85,15 +85,15 @@
                         list-style: none;
                         margin: .25em;
                         padding: 0;
-                        max-height: 350px;
+                        max-height: 800px;
+                        font-size: 80%;
 
                         li {
-                            margin-right: .4em;
+                            margin-right: 1.5em;
 
                             span {
                                 font-family: $font-sans-serif;
                                 margin-right: .5em;
-                                line-height: 1.5em;
                                 text-transform: uppercase;
 
                                 &.new-ingredient-name {
@@ -107,6 +107,7 @@
                             }
 
                             .remove-item {
+                                padding: 0;
                                 background-color: transparent;
                                 border: none;
                                 font-weight: 700;
