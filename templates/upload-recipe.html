@@ -117,7 +117,15 @@
 
 
 <!-- JAVASCRIPT -->
-<script>post_url = "{{url_for('add_recipe')}}" </script>
+<script>
+    post_url = "{{url_for('add_recipe')}}"
+
+   function redirect_to_recipe(recipe_id){
+
+   window.location.replace("/recipe/"+recipe_id);
+   }
+
+</script>
 <script src="{{url_for('static', filename='js/menu-icon.js')}}"></script>
 <script src="{{url_for('static', filename='js/recipe-upload.js')}}"></script>
 <!-- <script src="js/all-recipes.js"></script> -->

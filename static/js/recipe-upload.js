@@ -101,7 +101,7 @@ message = ""
         message += "Must include directions\n"
     }
     image_url = $('#image-upload').val()
-    if(image_url==""){}
+    if(image_url==""){ image_url=null}
     else if(!check_url(image_url)){message+="Must include a valid url for recipe image"}
     meal_type= $("#recipe-category").val()
     console.log(title)
@@ -136,12 +136,11 @@ console.log(names, amounts, units);
     url: post_url,
     dataType: "json",
     data: JSON.stringify(recipe_data),
-    success : function(result) {
-      alert(result);
-    },error : function(result){
-       console.log(result);
-    }
-    });
+    complete : function(result) {
+        id=result.responseText
+      console.log("New ID: "+id);
+      redirect_to_recipe(id)
+    }});
  }
 //  $.post(post_url,
 //  {

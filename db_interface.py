@@ -50,20 +50,20 @@ def create_dummy_recipe():
 
 def submit_new_recipe(recipe):
     recipe_params = {k: v for k, v in recipe["recipe_params"].items() if v is not None}
-    print(f"recipe params: {recipe_params}")
+    # print(f"recipe params: {recipe_params}")
     recipe_id = create_recipe(**recipe_params, session=session)
-    print(f"recipe_id: {recipe_id}")
+    # print(f"recipe_id: {recipe_id}")
     i = 1
     for ingredient in recipe["ingredients"]:
         ingredient_id = create_ingredient(ingredient["label"], session=session)
-        print(f"ingredient id: {ingredient_id}")
-        print(f"unit id: {ingredient["unit"]}")
-        print(f"amount: {ingredient["amount"]}")
-        print(f"sort: {i}")
+        # print(f"ingredient id: {ingredient_id}")
+        # print(f"unit id: {ingredient["unit"]}")
+        # print(f"amount: {ingredient["amount"]}")
+        # print(f"sort: {i}")
         create_recipe_ingredient(recipe_id, ingredient_id, ingredient["unit"], ingredient["amount"], i,
                                  session=session)
         i += 1
-
+    return recipe_id
 
 def remove_recipe(recipe_id):
     delete_recipe(recipe_id, session=session, engine=engine)

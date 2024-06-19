@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, url_for, Response
 
 import os
 import db_interface
@@ -62,12 +62,18 @@ def add_recipe():
         form = request.get_json()
         recipe_params = form["recipe_params"]
         ingredient_list = form['ingredients']
-        print(recipe_params)
-        print(ingredient_list)
-        db_interface.submit_new_recipe(form)
-    unit_list = db_interface.get_units()
-    # print(unit_list)
-    return render_template('upload-recipe.html', units=unit_list)
+        # print(recipe_params)
+        # print(ingredient_list)
+        recipe_id = db_interface.submit_new_recipe(form)
+        print(recipe_id)
+        response = Response("{'a':'b'}", status=201, mimetype='application/json')
+
+        response.data = f"{recipe_id}"
+        return response
+    else:
+        unit_list = db_interface.get_units()
+        # print(unit_list)
+        return render_template('upload-recipe.html', units=unit_list)
 
 
 if __name__ == '__main__':
