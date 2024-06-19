@@ -456,6 +456,40 @@ h3 {
   backdrop-filter: blur(10px);
   border-radius: 1rem;
 }
+.site-main .hero .container .all-recipes-links .form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+}
+.site-main .hero .container .all-recipes-links .form-container label {
+  text-transform: capitalize;
+  font-family: public-sans, sans-serif;
+  color: #333;
+  margin-top: 0.5em;
+}
+.site-main .hero .container .all-recipes-links .form-container input {
+  padding: 0.5em;
+  border: 1px solid #ff8f45;
+  border-radius: 5px;
+}
+.site-main .hero .container .all-recipes-links .form-container button {
+  color: #ff8f45;
+  font-family: public-sans, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.5em;
+  padding: 1em;
+  border: 1px solid #ff8f45;
+  border-radius: 15px;
+  background-color: #FAE5D3;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.site-main .hero .container .all-recipes-links .form-container button:hover {
+  color: #FAE5D3;
+  background-color: #ff8f45;
+  border: 1px solid #FAE5D3;
+}
 .site-main .hero .container .all-recipes-links h1 {
   color: #FAE5D3;
   margin: 4em 5em 1em 5em;
@@ -616,6 +650,14 @@ h3 {
 .recipe-template-main .recipe-directions .directions-list h1 {
   font-size: 2em;
 }
+.recipe-template-main .recipe-directions .directions-list p {
+  padding: 0;
+  color: #333;
+  font-family: public-sans, sans-serif;
+  line-height: 1.5em;
+  padding: 1em 0;
+  white-space: pre-line;
+}
 .recipe-template-main .recipe-directions .directions-list ul {
   padding: 0;
 }
@@ -726,8 +768,7 @@ h3 {
   max-width: 500px;
 }
 .upload-recipe-main .recipe-form {
-  border: 1px solid #ff8f45;
-  max-width: 750px;
+  max-width: 80vw;
   margin: 5em auto;
   padding: 1.5em;
   display: flex;
@@ -780,15 +821,15 @@ h3 {
   list-style: none;
   margin: 0.25em;
   padding: 0;
-  max-height: 350px;
+  max-height: 800px;
+  font-size: 80%;
 }
 .upload-recipe-main .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li {
-  margin-right: 0.4em;
+  margin-right: 1.5em;
 }
 .upload-recipe-main .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li span {
   font-family: public-sans, sans-serif;
   margin-right: 0.5em;
-  line-height: 1.5em;
   text-transform: uppercase;
 }
 .upload-recipe-main .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li span.new-ingredient-name {
@@ -799,6 +840,7 @@ h3 {
   font-style: italic;
 }
 .upload-recipe-main .recipe-form form .recipe-upload-added-ingredient .added-ingredient-list .ingredient-list li .remove-item {
+  padding: 0;
   background-color: transparent;
   border: none;
   font-weight: 700;
@@ -946,13 +988,13 @@ h3 {
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1130px) {
   .main-page {
     position: absolute;
     top: -9999px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1130px) {
   .site-nav button {
     background-color: transparent;
     border: none;
