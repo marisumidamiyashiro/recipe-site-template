@@ -1,15 +1,22 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, Response
-
+from flask import (Flask, render_template, request, flash, redirect,
+                   url_for, Response, session)
+from flask_login import LoginManager
 import os
-import db_interface
 import db_interface as db
 
+SECRET_KEY = '6cc3494a062a8393a19a7c060ba7a743335ceb7fc44ae87f76358c5846bbe637'
 
 UPLOAD_FOLDER = '/static/img'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = SECRET_KEY
+login_manager = LoginManager()
+login_manager.init_app(app)
 
+@login_manager.user_loader
+def load_user(user_id):
+    return db.get_user(user_id)
 
 @app.route("/")
 def home():
@@ -64,16 +71,35 @@ def add_recipe():
         ingredient_list = form['ingredients']
         # print(recipe_params)
         # print(ingredient_list)
-        recipe_id = db_interface.submit_new_recipe(form)
+        recipe_id = db.submit_new_recipe(form)
         print(recipe_id)
         response = Response("{'a':'b'}", status=201, mimetype='application/json')
 
         response.data = f"{recipe_id}"
         return response
     else:
-        unit_list = db_interface.get_units()
+        unit_list = db.get_units()
         # print(unit_list)
         return render_template('upload-recipe.html', units=unit_list)
+
+
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    elif request.method == "POST":
+        print(request.form)
+        return redirect(url_for('home'))
+
+
+@app.route('/signup', methods=["POST"])
+def signup():
+    form = request.form
+    print(f"{form['new_username']}\n{form['email']}\n{form['new_password']}")
+    result = db.create_new_user(form['new_username'],form['email'],form['new_password'])
+    if result == -1:
+        print(db.user_login("dawgnukem", "12345"))
+    return redirect(url_for('home'))
 
 
 if __name__ == '__main__':

@@ -6,12 +6,24 @@ from db_classes.recipe_db import (create_recipe, delete_recipe, recipe_lookup, e
 from db_classes.ingredient_db import create_ingredient
 from db_classes.recipe_ingredient_db import (create_recipe_ingredient, delete_recipe_ingredients)
 from db_classes.unit_db import create_unit, get_unit, get_all_units
-
+from db_classes.user_db import get_user_by_id, create_user, login
 engine = create_engine("sqlite:///recipesite.db")
 session = bind_engine(engine)
 SQLALCH_INSTANCE = '_sa_instance_state'
 
 # recipe.get_all_recipes2(session)
+
+
+def get_user(user_id):
+    return get_user_by_id(user_id, session=session)
+
+
+def user_login(username, password):
+    return login(username, password, session=session)
+
+
+def create_new_user(username, email, password):
+    return create_user(username, email, password, session=session)
 
 
 def create_dummy_recipe():

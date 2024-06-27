@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="created templates for base, header, and footer. converted all recipes to use database and have filter functionality">
+      <change afterPath="$PROJECT_DIR$/static/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/temp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/temp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_classes/user_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_classes/user_db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/recipe-upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/recipe-upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/upload-recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload-recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

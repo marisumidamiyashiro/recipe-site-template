@@ -2,6 +2,7 @@
 {% block title %}Recipe Site{% endblock %}
 
 {% block content %}
+
 <!--    <header class="site-header main-page">-->
 <!--        <div class="site-id">-->
 <!--            <a href="index.html">recipe&nbspsite</a>-->
@@ -33,23 +34,23 @@
     <section class="hero" style="background-image: url({{ url_for('static', filename='img/pizza.jpg')}});">
         <div class="container">
             <div class="all-recipes-links">
-                <!-- <h1>view<br>all<br>recipes</h1>
+                <h1>view<br>all<br>recipes</h1>
                     <a href="{{url_for('all_recipes')}}">
                         <span class="icon arrow"></span>
-                    </a> -->
-                <div class="form-container">
-                    <label for="username">username</label>
-                    <input type="text" placeholder="Enter Username" name="username" required>
+                    </a>
+<!--                <form class="form-container" method="POST" action="/login">-->
+<!--                    <label for="username">username</label>-->
+<!--                    <input type="text" placeholder="Enter Username" name="username" required>-->
 
-                    <label for="password">password</label>
-                    <input type="text" placeholder="Enter Password" name="password" required>
+<!--                    <label for="password">password</label>-->
+<!--                    <input type="text" placeholder="Enter Password" name="password" required>-->
 
-                    <label>
-                        <input type="checkbox" name="remember" checked="checked">Remember Me
-                    </label>
+<!--                    <label>-->
+<!--                        <input type="checkbox" name="remember" checked="checked">Remember Me-->
+<!--                    </label>-->
 
-                    <button type="submit">Login</button>
-                </div>
+<!--                    <button type="submit">Login</button>-->
+<!--                </form>-->
             </div>
         </div>
     </section>
