@@ -1,6 +1,7 @@
+import flask_login
 from flask import (Flask, render_template, request, flash, redirect,
-                   url_for, Response, session)
-from flask_login import LoginManager
+                   url_for, Response, session, abort)
+from flask_login import LoginManager, login_required
 import os
 import db_interface as db
 
@@ -14,11 +15,14 @@ app.secret_key = SECRET_KEY
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return db.get_user(user_id)
 
+
 @app.route("/")
+@login_required
 def home():
     return render_template("index.html")
 
@@ -89,6 +93,10 @@ def login():
         return render_template("login.html")
     elif request.method == "POST":
         print(request.form)
+        form = request.form
+        user = db.user_login(form["username"],form["password"])
+        flask_login.login_user(user)
+
         return redirect(url_for('home'))
 
 
@@ -117,6 +125,7 @@ if __name__ == '__main__':
 # add recipe(/create_recipe) POST
 # random recipe
 # delete route
+# admin password1234
 
 # connect front to back -> login stuff -> edit/delete stuff -> random recipe generation
 

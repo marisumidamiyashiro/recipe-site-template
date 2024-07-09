@@ -41,10 +41,10 @@ def create_user(name, email, password, session):
 def login(name, password, session):
     user = session.query(User).filter_by(user_name=name).first()
     if check_password_hash(user.user_password, password):
-        return user.user_id
+        return user
     else:
         return -1
 
 
 def get_user_by_id(user_id, session):
-    return session.query(User.filter_by(User.user_id == user_id))
+    return session.query(User).filter_by(user_id=user_id).first()
