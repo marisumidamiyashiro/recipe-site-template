@@ -96,6 +96,34 @@
                         }
                     }
                 }
+
+                // NEW BUTTON STYLING FOR NAV LOGIN
+                .button {
+                    border: 1px solid $button-color;
+                    background-color: $button-color;
+                    padding: 1em;
+                    border-radius: 15px;
+                    color: $accent-color;
+                    text-transform: uppercase;
+                    transition: all .25s ease-out;
+
+                    &:before,
+                    &:after {
+                        bottom: 0;
+                        transition: none;
+                    }
+
+                    &:hover {
+                        background-color: $accent-color;
+                        color: $button-color;
+
+                        &:before,
+                        &:after {
+                            background: transparent;
+                        }
+
+                    }
+                }
             }
         }
     }

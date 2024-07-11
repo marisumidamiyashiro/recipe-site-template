@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-id">
+            <a href="index.html">recipe site</a>
+        </div>
+        <div class="section-line"></div>
+        <nav class="site-nav" data-navstate="closed">
+            <button class="menu-button">
+                <span class="hide-visually">Menu</span>
+                <svg width="80" height="24">
+                    <title>Menu</title>
+                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>
+                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>
+                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>
+                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>
+                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>
+                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>
+                </svg>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all-recipes.html">All Recipes</a></li>
+                <li><a href="recipes-chosen.html">Selected Recipes</a></li>
+                <li><a href="upload-recipe.html">Upload A Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="login-page">
+        <section class="login-section">
+            <div class="login-form">
+                <button id="switch" onclick="swap_form()">Sign Up</button>
+                <form class="form-container" method="POST" action="/login" id="login">
+                    <label for="username">username</label>
+                    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+                    <label for="password">password</label>
+                    <input type="text" placeholder="Enter Password" name="password" id="password" required>
+                    <label>
+                        <input type="checkbox" name="remember" checked="checked">Remember Me
+                    </label>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <hr />
+
+        <section class="signup-section">
+            <div class="signup-form">
+                <form class="form-container" method="POST" action="/signup" id="signup">
+                    <label for="username">username</label>
+                    <input type="text" placeholder="Enter Username" name="new_username" id="new_username" required>
+                    <label for="email">email</label>
+                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                    <label for="password">password</label>
+                    <input type="text" placeholder="Enter Password" name="new_password" id="new_password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+</body>
+<!-- <script src="{{url_for('static', filename='js/login.js')}}"></script> -->
+<!-- {% endblock %} -->

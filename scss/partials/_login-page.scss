@@ -1,0 +1,36 @@
+.login-page {
+    display: flex;
+
+    hr {
+        border: 1px solid $button-color;
+        margin: 0;
+    }
+
+    .login-section {
+
+        margin: 20% 10%;
+
+        .login-form {
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    text-transform: uppercase;
+                    font-family: $font-sans-serif;
+                    color: #333;
+                }
+
+                input[type="text"],
+                textarea {
+                    border: 1px solid $link-hover-color;
+                    border-radius: 5px;
+                    width: 250px;
+                    margin: 0 0 1em 0;
+                    padding: .25em;
+                }
+            }
+        }
+    }
+}

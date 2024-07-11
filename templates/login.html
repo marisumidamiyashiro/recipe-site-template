@@ -2,27 +2,38 @@
 {% block title %} {{Login}} {% endblock %}
 {% block content %}
 {% include "navbar.html" %}
-<div style="margin:20% 10%;">
-    <button id="switch" onclick="swap_form()">Sign Up</button>
- <form class="form-container" method="POST" action="/login" id="login">
-     <label for="username">username</label>
-     <input type="text" placeholder="Enter Username" name="username" id="username" required>
-     <label for="password">password</label>
-     <input type="text" placeholder="Enter Password" name="password" id="password" required>
-     <label>
-                        <input type="checkbox" name="remember" checked="checked">Remember Me
-                    </label>
-     <button type="submit">Login</button>
- </form>
- <form class="form-container" method="POST" action="/signup" id="signup" style="display:none">
-     <label for="username">username</label>
-     <input type="text" placeholder="Enter Username" name="new_username" id="new_username" required>
-     <label for="email">email</label>
-     <input type="text" placeholder="Enter Email" name="email" id="email" required>
-     <label for="password">password</label>
-     <input type="text" placeholder="Enter Password" name="new_password" id="new_password" required>
-     <button type="submit">Sign Up</button>
- </form>
-</div>
-<script src="{{url_for('static', filename='js/login.js')}}"></script>
+<main class="login-page">
+    <section class="login-section">
+        <div class="login-form">
+            <button id="switch" onclick="swap_form()">Sign Up</button>
+            <form class="form-container" method="POST" action="/login" id="login">
+                <label for="username">username</label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required>
+                <label for="password">password</label>
+                <input type="text" placeholder="Enter Password" name="password" id="password" required>
+                <label>
+                    <input type="checkbox" name="remember" checked="checked">Remember Me
+                </label>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <hr />
+
+    <section class="signup-section">
+        <div class="signup-form">
+            <form class="form-container" method="POST" action="/signup" id="signup">
+                <label for="username">username</label>
+                <input type="text" placeholder="Enter Username" name="new_username" id="new_username" required>
+                <label for="email">email</label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                <label for="password">password</label>
+                <input type="text" placeholder="Enter Password" name="new_password" id="new_password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </section>
+</main>
+<!-- <script src="{{url_for('static', filename='js/login.js')}}"></script> -->
 {% endblock %}

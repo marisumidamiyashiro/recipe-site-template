@@ -79,6 +79,26 @@
   background: 0 0;
   transition: all 0s ease;
 }
+.site-header .site-nav ul li .button {
+  border: 1px solid #ff8f45;
+  background-color: #ff8f45;
+  padding: 1em;
+  border-radius: 15px;
+  color: #FAE5D3;
+  text-transform: uppercase;
+  transition: all 0.25s ease-out;
+}
+.site-header .site-nav ul li .button:before, .site-header .site-nav ul li .button:after {
+  bottom: 0;
+  transition: none;
+}
+.site-header .site-nav ul li .button:hover {
+  background-color: #FAE5D3;
+  color: #ff8f45;
+}
+.site-header .site-nav ul li .button:hover:before, .site-header .site-nav ul li .button:hover:after {
+  background: transparent;
+}
 
 /* TOP RECTANGLE ANIMATION OPEN */
 @keyframes separated-top-one-open {
@@ -1242,6 +1262,34 @@ h3 {
     width: 75vw;
   }
 }
+.login-page {
+  display: flex;
+}
+.login-page hr {
+  border: 1px solid #ff8f45;
+  margin: 0;
+}
+.login-page .login-section {
+  margin: 20% 10%;
+}
+.login-page .login-section .login-form form {
+  display: flex;
+  flex-direction: column;
+}
+.login-page .login-section .login-form form label {
+  text-transform: uppercase;
+  font-family: public-sans, sans-serif;
+  color: #333;
+}
+.login-page .login-section .login-form form input[type=text],
+.login-page .login-section .login-form form textarea {
+  border: 1px solid #ff985d;
+  border-radius: 5px;
+  width: 250px;
+  margin: 0 0 1em 0;
+  padding: 0.25em;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;

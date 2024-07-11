@@ -1,26 +1,27 @@
 <header class="site-header">
-        <div class="site-id">
-            <a href="index.html">recipe site</a>
-        </div>
-        <div class="section-line"></div>
-        <nav class="site-nav" data-navstate="closed">
-            <button class="menu-button">
-                <span class="hide-visually">Menu</span>
-                <svg width="80" height="24">
-                    <title>Menu</title>
-                    <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>
-                    <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>
-                    <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>
-                    <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>
-                    <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>
-                    <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>
-                </svg>
-            </button>
-            <ul>
-                <li><a href="{{url_for('home')}}">Home</a></li>
-                <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
-                <li><a href="{{url_for('selected_recipe',recipe_id='1')}}">Selected Recipes</a></li>
-                <li><a href="{{url_for('add_recipe')}}">Upload A Recipe</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="site-id">
+        <a href="index.html">recipe site</a>
+    </div>
+    <div class="section-line"></div>
+    <nav class="site-nav" data-navstate="closed">
+        <button class="menu-button">
+            <span class="hide-visually">Menu</span>
+            <svg width="80" height="24">
+                <title>Menu</title>
+                <rect class="navicon-top-one" x="25" y="0" height="4" width="15"></rect>
+                <rect class="navicon-top-two" x="40" y="0" height="4" width="15"></rect>
+                <rect class="navicon-middle-one" x="25" y="10" height="4" width="15"></rect>
+                <rect class="navicon-middle-two" x="40" y="10" height="4" width="15"></rect>
+                <rect class="navicon-bottom-one" x="25" y="20" height="4" width="15"></rect>
+                <rect class="navicon-bottom-two" x="40" y="20" height="4" width="15"></rect>
+            </svg>
+        </button>
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
+            <li><a href="{{url_for('selected_recipe',recipe_id='1')}}">Selected Recipes</a></li>
+            <li><a href="{{url_for('add_recipe')}}">Upload A Recipe</a></li>
+            <li><a class="button" href="#">Login</a></li>
+        </ul>
+    </nav>
+</header>
