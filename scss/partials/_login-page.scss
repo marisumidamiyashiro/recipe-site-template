@@ -6,18 +6,20 @@
         margin: 0;
     }
 
-    .login-section {
+    .login-section,
+    .signup-section {
 
         margin: 20% 10%;
 
-        .login-form {
+        .login-form,
+        .signup-form {
 
             form {
                 display: flex;
                 flex-direction: column;
 
                 label {
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     font-family: $font-sans-serif;
                     color: #333;
                 }
@@ -28,7 +30,27 @@
                     border-radius: 5px;
                     width: 250px;
                     margin: 0 0 1em 0;
-                    padding: .25em;
+                    padding: .5em;
+                }
+
+                button {
+                    margin: 2em 0;
+                    padding: 1em;
+                    max-width: 150px;
+                    border: 1px solid $link-color;
+                    background-color: transparent;
+                    border-radius: 25px;
+                    font-family: $font-sans-serif;
+                    text-transform: uppercase;
+                    color: $link-color;
+                    transition: all .25s ease-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        border: 1px solid $button-color;
+                        background-color: $button-color;
+                        color: $accent-color;
+                    }
                 }
             }
         }
