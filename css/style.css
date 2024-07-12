@@ -464,7 +464,7 @@ h3 {
 .site-main .hero .container {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 75%;
 }
 .site-main .hero .container .all-recipes-links {
   display: flex;
@@ -480,6 +480,15 @@ h3 {
   display: flex;
   flex-direction: column;
   padding: 3em;
+}
+.site-main .hero .container .all-recipes-links .form-container p {
+  font-family: public-sans, sans-serif;
+  color: #333;
+}
+.site-main .hero .container .all-recipes-links .form-container p a {
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
 }
 .site-main .hero .container .all-recipes-links .form-container label {
   text-transform: capitalize;

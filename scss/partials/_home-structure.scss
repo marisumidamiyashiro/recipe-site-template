@@ -15,7 +15,7 @@
         .container {
             display: flex;
             justify-content: center;
-            width: 50%;
+            width: 75%;
 
             .all-recipes-links {
                 // border: 1px solid black;
@@ -32,6 +32,17 @@
                     display: flex;
                     flex-direction: column;
                     padding: 3em;
+
+                    p {
+                        font-family: $font-sans-serif;
+                        color: #333;
+
+                        a {
+                            text-transform: capitalize;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
 
                     label {
                         text-transform: capitalize;

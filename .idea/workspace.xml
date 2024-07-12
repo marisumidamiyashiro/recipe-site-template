@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="created templates for base, header, and footer. converted all recipes to use database and have filter functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1ca7e6c0-e708-492f-827f-a33ef499878d" name="Changes" comment="created templates for base, header, and footer. converted all recipes to use database and have filter functionality" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,6 +166,7 @@
       <workItem from="1718751759182" duration="829000" />
       <workItem from="1720647608998" duration="1391000" />
       <workItem from="1720743034349" duration="104000" />
+      <workItem from="1720747469433" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="added files for db and server">
       <option name="closed" value="true" />
@@ -197,7 +196,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="created templates for base, header, and footer. converted all recipes to use database and have filter functionality" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/recipe_site_template$server.coverage" NAME="server Coverage Results" MODIFIED="1720743046084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/recipe_site_template$server.coverage" NAME="server Coverage Results" MODIFIED="1720747478150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/recipe_site_template$recipe_db.coverage" NAME="recipe_db Coverage Results" MODIFIED="1718418527460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_classes" />
     <SUITE FILE_PATH="coverage/recipe_site_template$db_interface.coverage" NAME="db_interface Coverage Results" MODIFIED="1718761839170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
