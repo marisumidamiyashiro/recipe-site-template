@@ -54,7 +54,7 @@ function addIngredient() {
 };
 
 
-function submit_recipe() {
+function submit_recipe(user_id) {
 message = ""
 //    names = $(".new-ingredient-name")
 //    amounts = $(".new-ingredient-amount")
@@ -118,7 +118,8 @@ message = ""
     'calories': calories,
     'instructions': directions,
     'meal_type': meal_type,
-    'photo_url': image_url
+    'photo_url': image_url,
+    'user_id': user_id
     }
  recipe_data =  {
     recipe_params: recipe_params,

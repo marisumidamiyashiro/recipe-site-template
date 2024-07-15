@@ -66,6 +66,7 @@ def selected_recipe(recipe_id):
         ...
 
 
+@login_required
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
