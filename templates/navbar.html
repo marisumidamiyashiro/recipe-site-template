@@ -21,7 +21,13 @@
             <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
             <li><a href="{{url_for('selected_recipe',recipe_id='1')}}">Selected Recipes</a></li>
             <li><a href="{{url_for('add_recipe')}}">Upload A Recipe</a></li>
+            {% if current_user.is_authenticated %}
+                Hi {{ current_user.user_name }}!
+                <a href="{{url_for('logout')}}">(Logout)</a>
+            {% else %}
             <li><a class="button" href="{{url_for('login')}}">Login</a></li>
+
+            {% endif %}
         </ul>
     </nav>
 </header>

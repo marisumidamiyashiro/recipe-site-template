@@ -94,7 +94,10 @@ def login():
         print(request.form)
         form = request.form
         user = db.user_login(form["username"],form["password"])
-        flask_login.login_user(user)
+        remember = False
+        if form.get('remember') == "on":
+            remember = True
+        flask_login.login_user(user, remember=remember)
 
         return redirect(url_for('home'))
 
@@ -109,13 +112,18 @@ def signup():
     return redirect(url_for('home'))
 
 
+@app.route('/signup', methods=["GET"])
+def logout():
+    flask_login.logout_user()
+    return redirect(url_for('home'))
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
 #
 # routes:
 # home(/)
