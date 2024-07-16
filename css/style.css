@@ -42,6 +42,7 @@
 .site-header .site-nav ul li {
   padding: 0.5em 1em;
   margin: 0 1em;
+  color: #d35f00;
 }
 .site-header .site-nav ul li a {
   display: inline-block;
@@ -78,6 +79,9 @@
   width: 97.8%;
   background: 0 0;
   transition: all 0s ease;
+}
+.site-header .site-nav ul li .user-login {
+  font-weight: 700;
 }
 .site-header .site-nav ul li .button {
   border: 1px solid #ff8f45;

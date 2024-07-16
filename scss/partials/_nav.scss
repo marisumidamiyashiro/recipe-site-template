@@ -51,6 +51,7 @@
             li {
                 padding: .5em 1em;
                 margin: 0 1em;
+                color: $link-color;
 
                 a {
                     display: inline-block;
@@ -95,6 +96,11 @@
                             transition: all 0s ease;
                         }
                     }
+                }
+
+                .user-login {
+                    // border: 1px solid red;
+                    font-weight: 700;
                 }
 
                 // NEW BUTTON STYLING FOR NAV LOGIN
