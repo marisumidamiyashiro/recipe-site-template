@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-
+import random
 from db_classes.db import bind_engine
 from db_classes.recipe_db import (create_recipe, delete_recipe, recipe_lookup, edit_recipe, get_all_recipes,
                                   meal_type_lookup)
@@ -77,6 +77,7 @@ def submit_new_recipe(recipe):
         i += 1
     return recipe_id
 
+
 def remove_recipe(recipe_id):
     delete_recipe(recipe_id, session=session, engine=engine)
     delete_recipe_ingredients(recipe_id, session=session, engine=engine)
@@ -105,9 +106,68 @@ def get_units():
         unit_list.append(unit.label)
     return units
 
+
+def compare_ingredient_lists(ingredient_list, ingredient_tuples):
+
+    for ingredient in ingredient_tuples:
+        ingredient_list = compare_ingredients(ingredient_list, ingredient)
+
+    return ingredient_list
+
+
+def compare_ingredients(ingredient_list, ingredient_tuple):
+    found = False
+    for index, ingredient in enumerate(ingredient_list):
+        if ingredient[0] == ingredient_tuple[0]:
+            if ingredient[2] == ingredient_tuple[2]:
+                new_touple = (ingredient[0], ingredient[1]+ingredient_tuple[1], ingredient[2])
+                ingredient_list[index] = new_touple
+            else:
+                ingredient_list.insert(index,ingredient_tuple)
+            found = True
+    if not found:
+        ingredient_list.append(ingredient_tuple)
+    return ingredient_list
+
+
+def create_random_list(meal_type, amount, userid=-1):
+    if userid != -1:
+        pass
+    else:
+        recipes = [r for r in meal_lookup(meal_type)]
+
+        if len(recipes) < amount:
+            amount = len(recipes)
+        random_recipes = random.sample(recipes, amount)
+        print("Recipes to combine:")
+        for r in random_recipes:
+            print(f"{r.recipe_id}. {r.name}:")
+        print("\n")
+        finalized_list = []
+        combined_ingredients = []
+        for r in random_recipes:
+            recipe = get_recipe(r.recipe_id)
+            del recipe.__dict__['_sa_instance_state']
+            # print(recipe.__dict__)
+            converted_recipe = recipe.__dict__
+            finalized_list.append(converted_recipe)
+
+            if len(combined_ingredients) == 0:
+                combined_ingredients = converted_recipe["ingredients"]
+
+            else:
+                combined_ingredients = compare_ingredient_lists(combined_ingredients, converted_recipe["ingredients"])
+        print(f"final_list: {combined_ingredients}")
+        recipe_final = [finalized_list, combined_ingredients]
+        return recipe_final
+
+
 def main() -> None:
-    create_dummy_recipe()
-    ...
+    recipes = create_random_list("Dinner", 5)
+    for r in recipes[0]:
+        print(r)
+    print(recipes[1])
+    # create_dummy_recipe()
     # recipe = recipe_lookup(1, session=session)
     # print(recipe.__dict__)
     # sample_recipe_ingredient = {
@@ -168,7 +228,7 @@ def main() -> None:
     # parmesan_id = create_ingredient("Parmesean", session=session)
     # recipe_ingredient1 = create_recipe_ingredient(recipe, chicken_id, whole_unit, 1, 1, session=session)
     # recipe_ingredient2 = create_recipe_ingredient(recipe, parmesan_id, oz_unit, 5, 2, session=session)
-
+    ...
 
 
 if __name__ == '__main__':
