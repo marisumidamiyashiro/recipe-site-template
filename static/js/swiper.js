@@ -15,5 +15,8 @@ const swiper = new Swiper('.swiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true
 
 });

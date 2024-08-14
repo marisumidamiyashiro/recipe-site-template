@@ -43,134 +43,19 @@
 
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-
                         <!-- Slides -->
+                        {% for recipe in recipe_list %}
                         <div class="swiper-slide">
                             <div class="swiper-recipe-chosen-ingredients">
-                                <h1>Shoyu Chicken</h1>
+                                <h1>{{recipe.name}}</h1>
                                 <ul>
-                                    <li><span>Soy Sauce</span> <span>1</span> <span>cups</span></li>
-                                    <li><span>Brown Sugar</span> <span>1</span> <span>cups</span></li>
-                                    <li><span>Water</span> <span>1</span> <span>cups</span></li>
-                                    <li><span>Onion (chopped)</span> <span>1</span> <span></span></li>
-                                    <li><span>Garlic Cloves (minced)</span> <span>4</span> <span></span></li>
-                                    <li><span>Ginger Root (grated)</span> <span>1</span> <span>tablespoon</span></li>
-                                    <li><span>Dried Oregano</span> <span>1</span> <span>tablespoons</span></li>
-                                    <li><span>crushed red pepper flakes (optional)</span> <span>1</span>
-                                        <span>teaspoon</span>
-                                    </li>
-                                    <li><span>Ground cayenne pepper (optinal)</span> <span>1</span>
-                                        <span>teaspoons</span>
-                                    </li>
-                                    <li><span>Ground Paprika (optional)</span> <span>1</span> <span>teaspoons</span>
-                                    </li>
-                                    <li><span>Skinless Chicken Thighs</span> <span>5</span> <span>pounds</span></li>
+                                    {% for ingredient in recipe.ingredients %}
+                                    <li><span>{{ingredient[0]}}</span> <span>{{ingredient[1]}}</span> <span>{{ingredient[2]}}</span></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="swiper-slide">
-                            <div class="swiper-recipe-chosen-ingredients">
-                                <h1>recipe title 2</h1>
-                                <ul>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-recipe-chosen-ingredients">
-                                <h1>recipe title 3</h1>
-                                <ul>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-recipe-chosen-ingredients">
-                                <h1>recipe title 4</h1>
-                                <ul>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-recipe-chosen-ingredients">
-                                <h1>recipe title 5</h1>
-                                <ul>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-recipe-chosen-ingredients">
-                                <h1>recipe title 6</h1>
-                                <ul>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-recipe-chosen-ingredients">
-                                <h1>recipe title 7</h1>
-                                <ul>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                    <li>Ingredient (Amount)</li>
-                                </ul>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     <div class="swiper-controls">
@@ -192,30 +77,16 @@
                 </div>
                 <div class="all-ingredients-list">
                     <ul>
-                        <li><span>Soy Sauce</span> <span>1</span> <span>cups</span></li>
-                        <li><span>Brown Sugar</span> <span>1</span> <span>cups</span></li>
-                        <li><span>Water</span> <span>1</span> <span>cups</span></li>
-                        <li><span>Onion (chopped)</span> <span>1</span> <span></span></li>
-                        <li><span>Garlic Cloves (minced)</span> <span>4</span> <span></span></li>
-                        <li><span>Ginger Root (grated)</span> <span>1</span> <span>tablespoon</span></li>
-                        <li><span>Dried Oregano</span> <span>1</span> <span>tablespoons</span></li>
-                        <li><span>crushed red pepper flakes (optional)</span> <span>1</span>
-                            <span>teaspoon</span>
-                        </li>
-                        <li><span>Ground cayenne pepper (optinal)</span> <span>1</span>
-                            <span>teaspoons</span>
-                        </li>
-                        <li><span>Ground Paprika (optional)</span> <span>1</span> <span>teaspoons</span>
-                        </li>
-                        <li><span>Skinless Chicken Thighs</span> <span>5</span> <span>pounds</span></li>
+                        {% for ingredient in ingredient_list %}
+                        <li><span>{{ingredient[0]}}</span> <span>{{ingredient[1]}}</span> <span>{{ingredient[2]}}</span></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
         </section>
     </main>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="static/js/menu-icon.js"></script>
-    <script src="static/js/swiper.js"></script>
+    <script src="{{url_for('static',filename='js/menu-icon.js')}}"></script>
+    <script src="{{url_for('static',filename='js/swiper.js')}}"></script>
 
 {% endblock %}

@@ -119,8 +119,13 @@ def logout():
     return redirect(url_for('home'))
 
 
-
-
+@app.route('/selected_recipes', methods=["GET"])
+def selected_recipes():
+    random_recipes = db.create_random_list("Dinner", 5)
+    for r in random_recipes[0]:
+        print(r)
+    print(random_recipes[1])
+    return render_template("recipes-chosen.html", recipe_list=random_recipes[0], ingredient_list=random_recipes[1])
 
 
 if __name__ == '__main__':

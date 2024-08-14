@@ -1505,7 +1505,7 @@ h3 {
   }
 
   .recipe-chosen-main .recipe-chosen-ingredients-list .recipe-chosen-singles-list .swiper {
-    min-width: 75vw;
+    max-width: 45vw;
   }
 
   .recipe-chosen-main .recipe-chosen-ingredients-list .recipe-chosen-singles-list .swiper span {
