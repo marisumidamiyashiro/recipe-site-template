@@ -41,7 +41,7 @@
             input[type="text"],
             input[type="file"],
             textarea {
-                border: 1px solid $link-hover-color;
+                border: 1px solid $link-color;
                 border-radius: 5px;
                 width: 500px;
                 margin: 0 0 1em 0;
@@ -59,7 +59,7 @@
             }
 
             select {
-                border: 1px solid $link-hover-color;
+                border: 1px solid $link-color;
                 border-radius: 5px;
                 width: 150px;
                 margin: 0 0 1em 0;

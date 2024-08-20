@@ -2,10 +2,6 @@
     display: flex;
 
     .hero {
-        background-image: url('/img/pizza.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
         height: 100vh;
         width: 70vw;
         display: flex;
@@ -18,13 +14,13 @@
             width: 75%;
 
             .all-recipes-links {
-                // border: 1px solid black;
+                border: 1px solid $link-color;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 margin-bottom: 10em;
-                background-color: rgba(255, 161, 124, 0.2);
+                background-color: #A2DFC1;
                 backdrop-filter: blur(10px);
                 border-radius: 1rem;
 
@@ -38,9 +34,14 @@
                         color: #333;
 
                         a {
+                            color: $link-color;
+                            justify-content: left;
                             text-transform: capitalize;
-                            margin: 0;
-                            padding: 0;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: $accent-color;
+                            }
                         }
                     }
 
@@ -49,7 +50,6 @@
                         font-family: $font-sans-serif;
                         color: #333;
                         margin-top: .5em;
-                        // font-weight: 700;
                     }
 
                     input {
@@ -120,7 +120,6 @@
     }
 
     .recipe-links {
-        background-color: $accent-color;
         width: 30vw;
 
         .container {
@@ -131,7 +130,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: end;
-                margin: 3em 0;
+                margin: 4em 1em;
             }
         }
     }

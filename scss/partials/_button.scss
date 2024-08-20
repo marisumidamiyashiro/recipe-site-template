@@ -111,6 +111,7 @@
             overflow: hidden;
             transition: all .5s ease;
             cursor: pointer;
+            z-index: 1;
 
             &:hover {
                 color: $accent-color;

@@ -4,7 +4,7 @@
     .recipe-chosen-title {
         display: flex;
         justify-content: center;
-        margin: 5em;
+        // margin: 5em;
 
         h1 {
             border: 1px solid #333;
@@ -15,124 +15,60 @@
 
     .recipe-chosen-ingredients-list {
         display: flex;
-        margin: 2em;
 
-        .recipe-chosen-singles-list {
-            // border: 1px solid #333;
+        .chosen-recipe-tab {
+            position: relative;
             margin: 1em;
+            width: 50vw;
+            // border: 1px solid red;
 
-            .swiper {
-                max-width: 45vw;
-                border: 1px solid black;
+            .tab {
+                margin-bottom: 1px;
+                float: left;
+                clear: left;
 
-                .swiper-slide {
+                .tab-toggle {
+                    border: 1px solid $button-color;
                     background-color: $accent-color;
-                    height: auto;
+                    color: $link-color;
+                    text-transform: uppercase;
+                    border-radius: 10px;
+                    position: relative;
+                    padding: 1em 2em;
+                    margin: .5em 0;
+                    width: 150px;
+                    cursor: pointer;
+                    transition: all .5s ease-in-out;
 
-                    .swiper-recipe-chosen-ingredients {
-
-                        // border: 1px solid blue;
-
-                        h1 {
-                            color: $button-color;
-                            text-align: center;
-                        }
-
-                        ul {
-                            list-style: none;
-                            padding: 0;
-
-                            li {
-                                display: grid;
-                                align-items: center;
-                                grid-template-areas: "a b c";
-                                grid-template-columns: repeat(3, 33.33% [col-start]);
-                                font-family: $font-sans-serif;
-                                font-size: 75%;
-                                line-height: 4em;
-
-                                &:nth-child(odd) {
-                                    background-color: $list-item-color;
-                                }
-
-                                span {
-
-                                    &:nth-child(1) {
-                                        grid-area: a;
-                                        text-transform: uppercase;
-                                        letter-spacing: 2px;
-                                        color: $button-color;
-                                        font-weight: 700;
-                                        margin-left: 1.5em;
-                                        line-height: 1.5em;
-                                    }
-
-                                    &:nth-child(2) {
-                                        grid-area: b;
-                                        color: #333;
-                                        text-align: center;
-                                    }
-
-                                    &:nth-child(3) {
-                                        grid-area: c;
-                                        color: #333;
-                                        font-weight: 700;
-                                        font-style: italic;
-                                        text-transform: uppercase;
-                                    }
-                                }
-                            }
-                        }
+                    &.active {
+                        border: 1px solid $link-color;
+                        background-color: $button-color;
+                        color: $accent-color;
                     }
                 }
             }
 
-            .swiper-controls {
-                // border: 1px solid green;
-                // display: flex;
-                // flex-direction: column;
+            .content {
+                max-height: 0;
+                width: 80%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                overflow: hidden;
+                padding: 0 2rem;
+                opacity: 0;
+                transition: all .3s ease-in-out;
 
-                .swiper-navigation-buttons {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .swiper-button-prev,
-                    .swiper-button-next {
-                        position: relative;
-                        // border: 1px solid red;
-                        color: $button-color;
-                        margin: 1em;
-                        --swiper-navigation-size: 50px;
-                    }
+                &.active {
+                    border: 1px solid green;
+                    max-height: 1000px;
+                    opacity: 1;
+                    padding: 0;
                 }
 
-                .swiper-pagination {
-
-                    .swiper-pagination-bullet {
-                        background: #333;
-                        padding: .5em;
-                    }
-
-                    .swiper-pagination-bullet-active {
-                        background: $link-color;
-                    }
+                h1 {
+                    text-align: center;
                 }
-            }
-        }
-
-        .recipe-chosen-all-ingredients-list {
-            border: 1px solid #333;
-            margin: 1em;
-            width: 45vw;
-            height: auto;
-
-            h3 {
-                margin: 0;
-                text-align: center;
-                font-size: 2em;
-            }
-
-            .all-ingredients-list {
 
                 ul {
                     list-style: none;
@@ -177,6 +113,69 @@
                                 font-style: italic;
                                 text-transform: uppercase;
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .recipe-chosen-all-ingredients-list {
+        border: 1px solid #333;
+        margin: 1em;
+        width: 45vw;
+        height: auto;
+
+        h3 {
+            margin: 0;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .all-ingredients-list {
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    display: grid;
+                    align-items: center;
+                    grid-template-areas: "a b c";
+                    grid-template-columns: repeat(3, 33.33% [col-start]);
+                    font-family: $font-sans-serif;
+                    font-size: 75%;
+                    line-height: 4em;
+
+                    &:nth-child(odd) {
+                        background-color: $list-item-color;
+                    }
+
+                    span {
+
+
+                        &:nth-child(1) {
+                            grid-area: a;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            color: $button-color;
+                            font-weight: 700;
+                            margin-left: 1.5em;
+                            line-height: 1.5em;
+                        }
+
+                        &:nth-child(2) {
+                            text-align: center;
+                            grid-area: b;
+                            color: #333;
+                        }
+
+                        &:nth-child(3) {
+                            grid-area: c;
+                            color: #333;
+                            font-weight: 700;
+                            font-style: italic;
+                            text-transform: uppercase;
                         }
                     }
                 }

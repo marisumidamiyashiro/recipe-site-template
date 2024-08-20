@@ -2,11 +2,16 @@
 $font-serif: platypi, serif;
 $font-sans-serif: public-sans, sans-serif;
 
-$link-color: #d35f00;
-$link-hover-color: #ff985d;
-$button-color: #ff8f45;
-$accent-color: #FAE5D3;
+$link-color: #35453E;
+$button-color: #45BF83;
+$accent-color: #FCF2E9;
 $list-item-color: #ffffff8a;
+
+// $link-color: #d35f00;
+// $link-color: #ff985d;
+// $button-color: #ff8f45;
+// $accent-color: #FAE5D3;
+// $list-item-color: #ffffff8a;
 
 
 
@@ -25,6 +30,9 @@ $list-item-color: #ffffff8a;
 // GLOBAL RESET
 body {
     margin: 0;
-    box-sizing: border-box;
     background-color: $accent-color;
+    box-sizing: border-box;
+    background-image: url('/img/food-background.png');
+    background-position: center;
+    background-attachment: fixed;
 }
