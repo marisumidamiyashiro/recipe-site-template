@@ -18,5 +18,12 @@ Updated index.html, didn't add to templates yet. Did update style.css in "static
     - now uses vertical tabs instead of swiper.js (original codepen - https://codepen.io/nickspiel/pen/bNNKeB)
   - updated templates/recipes-chosen.html (hopefully i did this right... sorry in advance!)
     - added chosen-recipe.js (this is for the tabs; converted to javascript, hopefully i did this right too...)
-  - updated static/css/style.css
-  
+  - updated static folder
+    - static/css/style.css
+    -static/img/food-background.png
+    -static/js/chosen-recipe.js
+  - fixed background link in static/css/style.css (must be changed with every overwrite for this file)
+    - !! change background-image url to "background-image: url("/static/img/food-background.png")"
+  - fixed "recipe site" button in top left of nav bar
+
+  - did not change "selected recipes" link (i couldn't figure it out)

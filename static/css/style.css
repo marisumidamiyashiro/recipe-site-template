@@ -1611,7 +1611,7 @@ body {
   margin: 0;
   background-color: #FCF2E9;
   box-sizing: border-box;
-  background-image: url("/img/food-background.png");
+  background-image: url("/static/img/food-background.png");
   background-position: center;
   background-attachment: fixed;
 }

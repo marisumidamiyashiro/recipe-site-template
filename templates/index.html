@@ -29,30 +29,31 @@
 <!--            </ul>-->
 <!--        </nav>-->
 <!--    </header>-->
-{% include "navbar.html" %}
 <main class="site-main">
-    <section class="hero" style="background-image: url({{ url_for('static', filename='img/pizza.jpg')}});">
+    <section class="hero">
         <div class="container">
             <div class="all-recipes-links">
-                <h1>view<br>all<br>recipes</h1>
-                    <a href="{{url_for('all_recipes')}}">
-                        <span class="icon arrow"></span>
-                    </a>
-<!--                <form class="form-container" method="POST" action="/login">-->
-<!--                    <label for="username">username</label>-->
-<!--                    <input type="text" placeholder="Enter Username" name="username" required>-->
+                <!-- <h1>view<br>all<br>recipes</h1>
+                <a href="all-recipes.html">
+                    <span class="icon arrow"></span>
+                </a> -->
 
-<!--                    <label for="password">password</label>-->
-<!--                    <input type="text" placeholder="Enter Password" name="password" required>-->
+                <div class="form-container">
+                    <h2>login</h2>
+                    <p>Don't have an account yet? <a href="login.html">Sign&nbspUp</a></p>
+                    <label for="username">username</label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
 
-<!--                    <label>-->
-<!--                        <input type="checkbox" name="remember" checked="checked">Remember Me-->
-<!--                    </label>-->
+                    <label for="password">password</label>
+                    <input type="text" placeholder="Enter Password" name="password" required>
 
-<!--                    <button type="submit">Login</button>-->
-<!--                </form>-->
+                    <label>
+                        <input type="checkbox" name="remember" checked="checked">Remember Me
+                    </label>
+
+                    <button type="submit">Login</button>
+                </div>
             </div>
-        </div>
     </section>
     <section class="recipe-links">
         <div class="container">
@@ -78,8 +79,7 @@
     <!-- later: login area -->
 </main>
 
-<script
-        src="{{url_for('static', filename='js/menu-icon.js')}}">
+<script src="{{url_for('static', filename='js/menu-icon.js')}}">
 
 </script>
 {% endblock %}
