@@ -49,7 +49,7 @@ def all_recipes(sort_by):
             'photo_url': r.photo_url
         }
         recipes.append(recipe)
-        print(recipe)
+        # print(recipe)
     return render_template("all-recipes.html", recipes=recipes)
 
 

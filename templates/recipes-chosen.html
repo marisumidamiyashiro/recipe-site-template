@@ -37,14 +37,13 @@
     <section class="recipe-chosen-ingredients-list">
 
         <!-- INDIVIDUAL RECIPE SECTION -->
-
-        {% for recipe in recipe_list %}
         <div class="chosen-recipe-tab">
+        {% for recipe in recipe_list %}
             <div class="tab">
                 <button class="tab-toggle">{{recipe.name}}</button>
             </div>
             <div class="content">
-                <h1>Recipe 1</h1>
+                <h1>Recipe</h1>
                 <ul>
                     {% for ingredient in recipe.ingredients %}
                     <li><span>{{ingredient[0]}}</span> <span>{{ingredient[1]}}</span> <span>{{ingredient[2]}}</span>
@@ -52,9 +51,8 @@
                     {% endfor %}
                 </ul>
             </div>
-        </div>
         {% endfor %}
-
+        </div>
         <div class="recipe-chosen-all-ingredients-list">
             <div class="all-ingredients-list-title">
                 <h3>Full List of Ingredients</h3>
@@ -70,7 +68,7 @@
         </div>
     </section>
 </main>
-<script src="{{url_for('static',filename='js/menu-icon.js')}}"></script>
-<script src="{{url_for('static',filename='js/chosen-recipe.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/menu-icon.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/chosen-recipe.js')}}"></script>
 
 {% endblock %}

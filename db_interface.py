@@ -163,11 +163,11 @@ def create_random_list(meal_type, amount, userid=-1):
 
 
 def main() -> None:
-    recipes = create_random_list("Dinner", 5)
-    for r in recipes[0]:
-        print(r)
-    print(recipes[1])
-    # create_dummy_recipe()
+    # recipes = create_random_list("Dinner", 5)
+    # for r in recipes[0]:
+    #     print(r)
+    # print(recipes[1])
+    create_dummy_recipe()
     # recipe = recipe_lookup(1, session=session)
     # print(recipe.__dict__)
     # sample_recipe_ingredient = {
